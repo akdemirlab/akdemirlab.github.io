@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<HEAD>
+
+<TITLE>Akdemir Lab</TITLE>
+<!--This design borrows extensively from Alicia Feder's site federlab.github.io -->
+
+<STYLE type="text/css">
+
+body
+{
+margin: 20px;
+padding: 20px;
+font-family: "Avenir", sans-serif, Courier, Serif;
+
+}
+
+DIV.content
+{
+border: 0px solid #5f5f5f;
+width: 550px;
+margin: 0;
+padding: 1em;
+position: absolute;
+background-color: #FFFFFF;
+left: 240px;
+top: 20px;
+}
+
+DIV.bar
+{
+border: 0px solid #5f5f5f;
+width: 200px;
+height: 300px;
+margin: 0;
+padding: 0;
+position: absolute;
+left: 65px;
+top: 45px;
+text-align: right;
+}
+
+
+p.link
+{
+color: black;
+font-family: "Avenir", sans-serif, Courier, Serif;
+font-size: 16px;
+font-weight: bold;
+text-align: left;
+}
+
+
+a:link, a:link.inlink, a:visited.inlink, a:visited
+{
+color: #0000FF;
+}
+
+
+a:link.minlink, a:visited.minlink
+{
+color: #000000;
+text-decoration: none;
+font-weight: bold;
+}
+
+a:hover, a:hover.inlink, a:hover.minlink
+{
+color: #EEC900;
+text-decoration: none;
+font-weight: bold;
+}
+
+.footer {
+  position: fixed;
+margin: 0;
+padding: 0;
+left: 50px;
+bottom: 20px;
+  }
+
+
+
+
+#contact
+{
+display: none;
+}
+
+#abstract
+{
+display: block;
+}
+
+#research
+{
+display: none;
+}
+
+#publications
+{
+display: none;
+}
+
+#members
+{
+display: none;
+}
+
+#news
+{
+display: none;
+}
+
+#lab
+{
+display: none;
+}
+
+
+
+</STYLE>
+
+<SCRIPT type="text/javascript">
+
+function homeShow()
+{
+document.getElementById("abstract").style.display="block";
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="none";
+document.getElementById("members").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="none";
+}
+
+function contactShow()
+{
+document.getElementById("contact").style.display="block";
+document.getElementById("publications").style.display="none";
+document.getElementById("members").style.display="none";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="none";
+}
+
+function publicationsShow()
+{
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="block";
+document.getElementById("members").style.display="none";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="none";
+}
+
+function membersShow()
+{
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="none";
+document.getElementById("members").style.display="block";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="none";
+}
+
+function newsShow()
+{
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="none";
+document.getElementById("members").style.display="none";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="block";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="none";
+}
+
+function researchShow()
+{
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="none";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("members").style.display="none";
+document.getElementById("research").style.display="block";
+document.getElementById("lab").style.display="none";
+}
+
+
+function joinShow()
+{
+document.getElementById("contact").style.display="none";
+document.getElementById("publications").style.display="none";
+document.getElementById("abstract").style.display="none";
+document.getElementById("news").style.display="none";
+document.getElementById("members").style.display="none";
+document.getElementById("research").style.display="none";
+document.getElementById("lab").style.display="block";
+}
+
+</SCRIPT>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127428632-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'UA-127428632-1');
+	</script>
+</HEAD>
+
+
+<BODY>
+
+
+<DIV class="bar">
+
+<P class="link"><A href="#" class="minlink" onclick="homeShow();">Home</A></P>
+<P class="link"><A href="#" class="minlink" onclick="researchShow();">Research</A></P>
+<P class="link"><A href="#" class="minlink" onclick="publicationsShow();">Publications</A></P>
+<P class="link"><A href="#" class="minlink" onclick="membersShow();">Members</A></P>
+<P class="link"><A href="#" class="minlink" onclick="newsShow();">News</A></P>
+<P class="link"><A href="#" class="minlink" onclick="joinShow();">Join</A></P>
+<P class="link"><A href="#" class="minlink" onclick="contactShow();">Contact</A></P>
+
+</DIV>
+
+
+
+<DIV class="content">
+  
+
+
+  <DIV id="abstract">
+
+    <h2> Akdemir Lab - Cancer Chromatin Biology </h2>
+<hr>
+
+
+Our lab focuses on integrative computational analyses projects to advance efforts for precision cancer medicine. We are analyzing multi-omics datasets from primary human tumors such as long-read whole genome sequencing, genome-wide chromatin organization (Hi-C) and single-cell ATAC-sequencing from common (i.e. glioblastoma) or rare (i.e. chordoma) CNS tumor types to investigate how tumor evolution shapes the organization of chromatin in cancer cells and tumor microenvironment. 
+<br><br>
+
+The lab is based in the <a
+    href="https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/neurosurgery.html" class = "minlink" target="_blank">Department
+    of Neurosurgery</a> at the MD Anderson Cancer Center. To learn
+    more about the goals of the lab, please check out the <a href="#" class="minlink" onclick="researchShow();">research</a> and <a href="#" class="minlink" onclick="publicationsShow();">publication</a> pages.<br> <br>
+
+    The Akdemir lab is part of several international scientific organizations such <a href="https://www.nature.com/collections/afdejfafdb/" class = "minlink" target="_blank"> the International Cancer Genome Consortium (ICGC-PCWAG)</a>, <a href="https://www.4dnucleome.org" class="minlink" target="_blank"> NIH Common 4D Nucleome program</a>,<a href="https://breakthroughcancer.org/" class ="minlink" target="_blank"> the BreakThrough Cancer Foundation</a>. We are also part of some institutional research efforts such <a href="https://www.mdanderson.org/cancermoonshots/cancer-types/Glioblastoma.html" class ="minlink" target="_blank">the MD Anderson GBM Moonshot efforts</a> as well as <a href="https://www.mdanderson.org/research/departments-labs-institutes/spores/brain-cancer-spore.html" class="minlink" target="_blank">NCI-MD Anderson Brain Cancer SPORE team</a>. <br><br>
+    Prospective graduate students, rotation students and
+    postdoctoral fellows are encouraged to get
+    in touch with Kadir. 
+ 
+
+    </DIV>
+
+      <DIV id="research">
+
+<h2> Research </h2>
+<hr>
+
+	  The three billion base pairs of the human genome, if stretched out linearly, would exceed 2 meters in length.  Remarkably, this amount of DNA is packaged inside of a nucleus that is 5-10 micrometers wide in diameter. The compaction of the genome in the nucleus is non-random. Recent evidence has indicated that a critical feature of genome organization is that regions of the genome form self-associated domain structures on a megabase scale1. These structures are generally known as topologically associated domains (TADs) and have been demonstrated to play a critical role in facilitating proper gene regulation. Our recent studies revealed that the integration of the TAD organization with cancer genomic datasets provides unique insights into the mechanisms and functional consequences of somatic alterations observed in human tumors.				<br><br>
+In our lab, we focus on the development and application of algorithms that analyze and interpret multi-omics data from individual patients for prospective clinical uses. Broadly, we strive to gain a better understanding of mutations (somatic and germline) in cancer cells which will enable new translational inventions and accelerate development of clinical interventions. 
+<h3> Elucidating the functional consequences of complex genomic alterations </h3>
+<hr>
+Cancer genomes are predominantly restructured due to somatically-acquired, catastrophic rearrangements. However, our ability to determine the clinical implications of these complex rearrangements in cancer genomes remains limited. We develop novel computational methods to utilize chromatin organization information for analyzing the rearranged chromosomes, and elicit information about the altered gene regulatory landscapes that result from these complex rearrangements. We apply these methods to investigate the potential clinical implications of altered chromosomes in human brain tumors, cancer types which exhibit the highest number of complex genomic rearrangements among human malignancies.
+<br>
+<hr>
+
+<h3> Investigating the influence of epigenome on mutational processes </h3>
+<hr>
+Somatic mutations arise during the life of a cell and in the generation of its progeny. Accumulation of mutations can lead to age-related diseases, and those occurring in cancer driver genes may ultimately lead to tumorigenesis and the development of clinically detectable disease. However, the spatio-temporal processes that direct mutation rates throughout cancer evolution are not fully understood. The hierarchical folding of genomic DNA within the nucleus is intimately linked with transcriptional regulation and DNA replication. We investigate the effects of three-dimensional genome organization on the distribution of somatic mutations in human cancers with the aim of elucidating the potential role of genome folding on DNA damage and repair processes. 
+<br>
+<hr>
+
+<h3> Developing computational methods for integrative analysis of large genomic datasets </h3>
+<hr>
+Our lab is involved multiple genomic characterization efforts involving generation of multi-omics datasets from patients with different tumor types or exhibiting a spectrum of clinical responses. Therefore, a key research are in the lab is to develop computational tools to mine and visualize diverse genomic assay outputs in order to expand our understanding of how different molecular processes are involved in tumor initiation, progression and response to cancer therapies. 
+
+</DIV>
+
+<DIV id="lab">
+<h2> Joining the lab </h2>
+<hr>
+	 We are actively seeking motivated and talented members to join our team. We strive to provide excellent training across a wide range of computational and experimental approaches.
+	 
+
+    <h3> Postdoctoral fellows </h3>
+
+    The Akdemir Lab is hiring multiple postdoctoral fellows.  <br><br>
+
+Our lab aims to understand how three-dimensional chromatin organization influences somatic mutation occurrence during tumor evolution. To achieve these goals we generate three-dimensional chromatin organization (Hi-C), long-read sequencing whole-genome (Oxford-Nanopore) and single-cell chromatin accessibility (scATAC-Seq) techniques to reveal how genome architecture is altered by genomic rearrangements aberrations in primary tumor samples.
+Related projects and responsibilities will include:
+    <ol>
+<li>Studies of patient samples for tumor behavior and clinical outcomes. 
+<li>Studies of resistance to existing and emerging cancer therapies using patient-derived data. 
+	</ol>
+	
+As a postdoctoral fellow, you will have the opportunity to 
+
+	 <ol>
+<li> Apply or develop novel bioinformatics algorithms to interpret cancer genomic and epigenomic datasets.
+<li> Grow your own research program and plan for the next stages of your career. 
+	</ol>
+	
+    
+    Potential postdoctoral fellows are very much encouraged to  <a
+    href="#" class="minlink" onclick="contactShow();">get in
+    touch</a>. Generally the most useful emails will touch on your
+    background and previous work, how our research interests may
+    intersect, your timeframe for seeking a position and will include
+    a copy of your CV. Informal inquiries very welcome. <br>
+
+    <hr>
+
+    <h3> PhD students </h3>
+    We are part of <a href =
+    "https://gsbs.uth.edu/"
+    class = "minlink"> the Graduate School of Biomedical Sciences (GBSB) </a> program of the University of Texas Health Science Center at Houston. Students should apply to the graduate program and do not apply directly to labs. During the first year of a Ph.D. program, students rotate through ~3 labs prior to deciding on a thesis lab. Our lab is usually open for rotation students every quarter. <br><br> Prospective and current graduate students are
+    very welcome to <a
+    href="#" class="minlink" onclick="contactShow();">get in touch</a> with
+    questions about the lab, although this is not required to gain
+    admittance to the program.  <br>
+
+ <br>
+        <hr>
+
+    <h3> Undergraduate and high school students </h3>
+    Please contact with Kadir regarding research positions open for undergraduate
+    or high school students. <br><br>We accept students through <a href="https://www.mdanderson.org/education-training/degrees-programs/summer-research-programs/cprit-cure.html" class="minlink" target="_blank">CPRIT-CURE Summer Undergraduate Program </a> and the PCCSM program which is for STEM-oriented high school (junior and senior) and college students interested in biomedical careers, and first-year medical students. Our focus is on students/trainees who are under-represented in science and medicine.<br><br>
+
+   <hr>
+  	 <h3> Philosophy on Mentorship and Expectations </h3>
+
+
+
+    
+
+
+
+    
+</DIV>
+
+
+
+  <DIV id="contact">
+
+<h2>Contact</h2>
+      <hr>
+
+      E-mail: kcakedemir@mdanderson.org<br><br>
+      Twitter: <a href="https://twitter.com/kcakdemir" class="minlink" target="_blank">@kcakdemir</a><br><br>
+      Github: <a href="https://akdemirlab.github.io/" class="minlink" target="_blank">Akdemirlab</a><br><br>
+      
+      We're located in the Basic Science Research Building 5th Floor, UT MD Anderson Brain Tumor Center</a>. <br><br>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d866.3432006794505!2d-95.39873743155493!3d29.70895859293418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c114aff55ce5%3A0xa5820c6b99efe14f!2sMitchell%20Research%20Building!5e0!3m2!1sen!2sus!4v1622661090509!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;"
+      allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+ 
+
+
+
+</DIV>
+
+
+<DIV id="publications">
+<h2>Selected Publications</h2>
+    <hr>
+    
+You can find a current and complete list of publications on <a href =
+  "https://scholar.google.com/citations?user=W2WBgzEAAAAJ&hl=en" class =
+    "minlink" target="_blank">Google scholar</a>.
+
+    <hr>
+    
+   
+    <img src = "img/signatures.jpeg" style="float:left;margin:0 15px 0 0;">
+<br><em>Somatic mutation distributions in cancer genomes vary with three-dimensional chromatin structure</em> (2020)  <br> [<a href =
+  "https://www.nature.com/articles/s41588-020-0708-0" class =
+  "minlink" target="_blank">Nature Genetics</a>] <br><br><br><br><br><br> KC. Akdemir (co-corresponding), VT. Le, JM. Kim, S. Killcoyne, DA. King, Y. Lin, Y. Tian, A. Inoue, SB. Amin, FS. Robinson, M. Nimmakayalu, RE. Herrera, EJ. Lynn, K. Chan, S. Seth, LJ. Klimczak, M. Gerstung, DA. Gordenin, J. OBrien, L. Li, YL. Deribe, RG. Verhaak, PJ. Campbell, R. Fitzgerald, AJ. Morrison, JR. Dixon (co-corresponding), PA. Futreal (co-corresponding)
+<br><br>
+
+    <hr>
+
+
+    
+ <hr>
+    <img src = "img/SVsInHiC.jpeg" style="float:left;margin:0 15px 0 0;">
+<br><em>Disruption of chromatin folding domains by somatic genomic rearrangements in human cancer</em> (2020)  <br> [<a href =
+  "https://www.nature.com/articles/s41588-019-0564-y" class =
+  "minlink" target="_blank">Nature Genetics</a>] <br><br> KC. Akdemir, VT. Le, S. Chandran, Y. Li, RG. Verhaak, R Beroukhim, PJ. Campbell, L. Chin, JR. Dixon, PA. Futreal, PCAWG Structural Variation Working Group & PCAWG Consortium
+<br><br><br><br><br><br><br><br><br>
+	<hr>
+    <hr>
+    
+    
+ 
+     
+    <img src = "img/pcawg.jpeg" style="float:left;margin:0 15px 0 0;">
+<br><em>Pan-cancer analysis of whole genomes</em> (2020)  <br> [<a href =
+  "https://www.nature.com/articles/s41588-019-0564-y" class =
+  "minlink" target="_blank">Nature</a>] <br><br> The ICGC/TCGA Pan-Cancer Analysis of Whole Genomes Consortium
+<br><br>
+
+    <hr>
+
+
+  </DIV>
+
+  <DIV id="news">
+
+<h2> News </h2>
+<hr>
+
+	We are hiring multiple postdoctoral fellows.
+
+
+    </DIV>
+
+
+
+
+<DIV id="members">
+  
+<h2>Members</h2>
+
+<hr>
+
+
+<img src = "img/kadir.jpg" width = "40%" height = "40%" style="float:left;margin:5px 15px 5px 5px;">
+<h3>Kadir C. Akdemir (he/him)</h3>
+Principal investigator
+[<a href="AkdemirCV.pdf" class="minlink" onClick="ga('send', 'pageview', 'cv.pdf');">CV</a>]<br>
+kcakedemir@mdanderson.org<br><br><br><br><br>
+
+
+    <hr>
+
+    
+    
+You? Learn more about <a
+    href="#" class="minlink" onclick="joinShow();">joining the lab</a>. 
+    
+  </DIV>
+
+
+
+  
+</DIV>
+
+
+</BODY>
+
+</html>
+
+
+
+
+
+
+
