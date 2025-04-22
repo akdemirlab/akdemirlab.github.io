@@ -52,6 +52,32 @@ width: 400px;
 word-wrap: normal;  
 }
 
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates exactly 2 equal columns */
+  gap: 0px; /* Adjust the gap between profiles */
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Image width auto, intro takes remaining */
+  gap: 15px;
+  border-bottom: 1px solid #ccc; /* Only bottom border */
+  padding: 15px;
+  align-items: center; /* Vertically align image and intro */
+  margin-bottom: 10px; /* Add a small space between the bottom borders */
+}
+
+.profile-container img {
+  width: 120px; /* Adjust image width as needed */
+  height: auto;
+  object-fit: contain;
+}
+
+.intro h3 {
+  margin-top: 0;
+}
+
 p.link
 {
 color: black;
@@ -457,68 +483,164 @@ You can find a current and complete list of publications on <a href =
 
 <hr>
 
+<div class="profiles-grid">
+  <div class="profile-container">
+    <img src="img/kadir.jpg" alt="Kadir C. Akdemir">
+    <div class="intro">
+      <h3>Kadir C. Akdemir</h3>
+      Principal investigator
+      [<a href="AkdemirCV.pdf" class="minlink" onClick="ga('send', 'pageview', 'cv.pdf');">CV</a>]<br>
+      <br>
+      <b>Hometown</b>: Siirt, Turkey
+      <br>
+      <b>email</b>: kcakedemir@mdanderson.org
+    </div>
+  </div>
 
-<div class="row">
-  <img src="img/kadir.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Kadir C. Akdemir (he/him)</h3>
-    Principal investigator
-    [<a href="AkdemirCV.pdf" class="minlink" onClick="ga('send', 'pageview', 'cv.pdf');">CV</a>]<br>
-    <br>
-	  <b>Hometown</b>: Siirt, Turkey
-    <br>
-	  <b>email</b>: kcakedemir@mdanderson.org
+  <div class="profile-container">
+    <img src="img/allison.jpg" alt="Allison Anderson">
+    <div class="intro">
+      <h3>Allison Anderson</h3>
+      Research Data Coordinator<br>
+      <br>
+      <b>Hobbies</b>: playing with my 3 dogs, scrapbooking, and spending time with friends and family!
+      <br>
+      <b>email</b>: AIAnderson@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/tate.png" alt="Tate Bregman">
+    <div class="intro">
+      <h3>Tate Bregman</h3>
+      Undergraduate Student<br>
+      <br>
+      <b>email</b>: TBregman@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/kate.jpeg" alt="Kate Cho">
+    <div class="intro">
+      <h3>Kate Cho</h3>
+      PhD Student
+      <br><br>
+      <b>Hometown</b>: Suwon, South Korea
+      <br>
+      <b>Hobbies</b>: playing with my dog, gym and trying new food places
+      <br>
+      <b>email</b>: CCho@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/nora.jpg" alt="Nora Lawson">
+    <div class="intro">
+      <h3>Nora Lawson</h3>
+      Master's Student
+      <br><br>
+      <b>Hometown</b>: Lampasas, Texas
+      <br>
+      <b>Hobbies</b>: Swimming and hiking.
+      <br>
+      <b>email</b>: NMLawson@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/ines.jpeg" alt="Inés Martín Barrio">
+    <div class="intro">
+      <h3>Inés Martín Barrio</h3>
+      Master's Student
+      <br><br>
+      <b>Hometown</b>: Madrid, Spain
+      <br>
+      <b>email</b>: imartin@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/thomas.jpg" alt="Thomas Mitchell">
+    <div class="intro">
+      <h3>Thomas Mitchell</h3>
+      PhD Student
+      <br><br>
+      <b>Hometown</b>: Guerneville, California
+      <br>
+      <b>Hobbies</b>: reading, video games, and playing pickle ball
+      <br>
+      <b>email</b>: tjmitchell1@mdanderson.org
+    </div>
+  </div>
+
+
+  <div class="profile-container">
+    <img src="img/mesut.jpeg" alt="Mesut Unal">
+    <div class="intro">
+      <h3>Mesut Unal</h3>
+      Computational Post-doc
+      <br><br>
+      <b>Hometown</b>: Antalya, Turkey
+      <br>
+      <b>Hobbies</b>: Painting, history, philosophy, martial arts, new to bouldering
+      <br>
+      <b>email</b>: munal@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/lingqun.jpg" alt="Lingqun Ye">
+    <div class="intro">
+      <h3>Lingqun Ye</h3>
+      Computational Staff Scientist
+      <br><br>
+      <b>Hometown</b>: Hunan, China
+      <br>
+      <b>Hobbies</b>: camping, gaming, piano, swimming
+      <br>
+      <b>email</b>: lye1@mdanderson.org
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <img src="img/bo.jpg" alt="Bo Zhao">
+    <div class="intro">
+      <h3>Bo Zhao</h3>
+      Computational Post-doc
+      <br><br>
+      <b>Hometown</b>: Henan, China
+      <br>
+      <b>Hobbies</b>: riding, hiking
+      <br>
+      <b>email</b>: bzhao2@mdanderson.org
+    </div>
   </div>
 </div>
+
+
+<h2>Alumni</h2>
+
 <hr>
 
-<div class="row">
-  <img src="img/lana.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profiles-grid">
+<div class="profile-container">
+  <img src="img/lana.jpg" alt="Lana Al Hasani">
   <div class="intro">
-    <h3>Lana Al Hasani (she/her)</h3>
+    <h3>Lana Al Hasani</h3>
     PhD Rotation Student
     <br><br>
     <b>Hometown</b>: Baghdad, Iraq
     <br>
-	  <b>Hobbies</b>: weightlifting, pilates and content creation for social media
+    <b>Hobbies</b>: weightlifting, pilates and content creation for social media
     <br>
-	  <b>email</b>: LAAl@mdanderson.org
+    <b>email</b>: LAAl@mdanderson.org
   </div>
 </div>
-<hr>
 
-<div class="row">
-  <img src="img/allison.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/andrea.jpg" alt="Andrea Conley">
   <div class="intro">
-    <h3>Allison Anderson (she/her)</h3>
-    Research Data Coordinator<br>
-    <br>
-	  <b>Hobbies</b>: playing with my 3 dogs, scrapbooking, and spending time with friends and family!
-    <br>
-	  <b>email</b>: AIAnderson@mdanderson.org
-  </div>
-</div>
-<hr>
-
-<div class="row">
-  <img src="img/kate.jpeg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Kate Cho (she/her)</h3>
-    PhD Student
-    <br><br>
-    <b>Hometown</b>: Suwon, South Korea
-    <br>
-    <b>Hobbies</b>: playing with my dog, gym and trying new food places 
-    <br>
-    <b>email</b>: CCho@mdanderson.org
-  </div>
-</div>
-<hr>
-
-<div class="row">
-  <img src="img/andrea.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Andrea Conley (she/her)</h3>
+    <h3>Andrea Conley</h3>
     Summer Student
     <br><br>
     <b>Hometown</b>: Houston, Texas
@@ -528,12 +650,11 @@ You can find a current and complete list of publications on <a href =
     <b>email</b>: aconley11@mdanderson.org
   </div>
 </div>
-<hr>
 
-<div class="row">
-  <img src="img/aminah.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/aminah.jpg" alt="Aminah El-Titi">
   <div class="intro">
-    <h3>Aminah El-Titi (she/her)</h3>
+    <h3>Aminah El-Titi</h3>
     High-school Student
     <br><br>
     <b>Hometown</b>: Houston, Texas
@@ -543,86 +664,54 @@ You can find a current and complete list of publications on <a href =
     <b>email</b>: aael@mdanderson.org
   </div>
 </div>
-<hr>
 
-
-<div class="row">
-  <img src="img/ali.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/ali.jpg" alt="Ali Haider">
   <div class="intro">
-    <h3>Ali Haider (he/him)</h3>
+    <h3>Ali Haider</h3>
     Medical student (co-advised with Dr. Lang)
     <br><br>
     <b>Hometown</b>: Fort Worth, Texas
     <br>
-    <b>Hobbies</b>: weightlifting, sports, reading, and spicy food. 
+    <b>Hobbies</b>: weightlifting, sports, reading, and spicy food.
     <br>
     <b>email</b>: aalam@mdanderson.org
   </div>
 </div>
-<hr>
 
-<div class="row">
-  <img src="img/ece.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/ece.jpg" alt="Ece Kilinc">
   <div class="intro">
-    <h3>Ece Kilinc (she/her)</h3>
+    <h3>Ece Kilinc</h3>
     PhD Rotation Student
     <br><br>
     <b>Hometown</b>: Zonguldak, Turkey
     <br>
-	  <b>Hobbies</b>: ancient languages, reading, astronomy
+    <b>Hobbies</b>: ancient languages, reading, astronomy
     <br>
-	  <b>email</b>: EKilinc@mdanderson.org
+    <b>email</b>: EKilinc@mdanderson.org
   </div>
 </div>
-<hr>
 
-<div class="row">
-  <img src="img/ellie.JPG" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/ellie.JPG" alt="Ellie Kim">
   <div class="intro">
-    <h3>Ellie Kim (she/her)</h3>
+    <h3>Ellie Kim</h3>
     Summer Student (UT Austin)
     <br><br>
     <b>Hometown</b>: Seoul, South Korea
     <br>
-    <b>Hobbies</b>: I enjoy spending time in coffee shops, reading, exploring new places, and taking long walks. 
+    <b>Hobbies</b>: I enjoy spending time in coffee shops, reading, exploring new places, and taking long walks.
     <br>
     <b>email</b>: rkim1@mdanderson.org
   </div>
 </div>
-<hr>
 
-<div class="row">
-  <img src="img/nora.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Nora Lawson (she/her)</h3>
-    Master's Student
-    <br><br>
-    <b>Hometown</b>: Lampasas, Texas
-    <br>
-    <b>Hobbies</b>: Swimming and hiking. 
-    <br>
-    <b>email</b>: NMLawson@mdanderson.org
-  </div>
-</div>
-<hr>
-	
-<div class="row">
-  <img src="img/ines.jpeg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Inés Martín Barrio (she/her)</h3>
-    Master's Student
-    <br><br>
-    <b>Hometown</b>: Madrid, Spain
-    <br>
-    <b>email</b>: imartin@mdanderson.org
-  </div>
-</div>
-<hr>
 
-<div class="row">
-  <img src="img/kristy.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
+<div class="profile-container">
+  <img src="img/kristy.jpg" alt="Kristy Mendoza">
   <div class="intro">
-    <h3>Kristy Mendoza (she/her)</h3>
+    <h3>Kristy Mendoza</h3>
     Summer Student (Columbia University)
     <br><br>
     <b>Hometown</b>: Houston, Texas
@@ -632,54 +721,7 @@ You can find a current and complete list of publications on <a href =
     <b>email</b>: kmendoza3@mdanderson.org
   </div>
 </div>
-<hr>
-
-<div class="row">
-  <img src="img/mesut.jpeg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Mesut Unal (he/him)</h3>
-    Computational Post-doc
-    <br><br>
-    <b>Hometown</b>: Antalya, Turkey
-    <br>
-    <b>Hobbies</b>: Painting, history, philosophy, martial arts, new to bouldering
-    <br>
-    <b>email</b>: munal@mdanderson.org
-  </div>
 </div>
-<hr>
-	
-<div class="row">
-  <img src="img/lingqun.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Lingqun Ye (he/him)</h3>
-    Computational Staff Scientist
-    <br><br>
-    <b>Hometown</b>: Hunan, China
-    <br>
-    <b>Hobbies</b>: camping, gaming, piano, swimming
-    <br>
-    <b>email</b>: lye1@mdanderson.org
-  </div>
-</div>
-<hr>
-
-<div class="row">
-  <img src="img/bo.jpg" width="200" height="220" style="object-fit:contain;float:left;margin:5px 15px 15px 5px;">
-  <div class="intro">
-    <h3>Bo Zhao (he/him)</h3>
-    Computational Post-doc
-    <br><br>
-    <b>Hometown</b>: Henan, China
-    <br>
-    <b>Hobbies</b>: riding, hiking
-    <br>
-    <b>email</b>: bzhao2@mdanderson.org
-  </div>
-</div>
-<hr>
-You? Learn more about <a
-    href="#" class="minlink" onclick="joinShow();">joining the lab</a>. 
 
 <br><br><br><br>    	
     <hr>
