@@ -1,764 +1,632 @@
-
 <!DOCTYPE html>
-<HEAD>
 
-<TITLE>Akdemir Lab</TITLE>
-<!--This design borrows extensively from Alicia Feder's site federlab.github.io -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Akdemir Lab | Spatial Cancer Genomics &amp; Genome Evolution | MD Anderson</title>
+<meta content="The Akdemir Lab at MD Anderson investigates brain tumor evolution, extrachromosomal DNA (ecDNA), spatial cancer genomics, 3D chromatin organization, and brain metastases." name="description"/>
+<meta content="Akdemir Lab" property="og:title"/>
+<meta content="Spatial cancer genomics, ecDNA, 3D genome architecture and tumor evolution at MD Anderson Cancer Center." property="og:description"/>
+<meta content="https://akdemirlab.github.io/img/research/watercolor.jpg" property="og:image"/>
+<meta content="https://akdemirlab.github.io/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#F7F7FA;
+  --paper-2:#EEEDF4;
+  --ink:#1D1A33;
+  --ink-2:#55516E;
+  --ink-3:#8A86A0;
+  --rule:#DCDAE6;
+  --hema:#43308F;      /* hematoxylin */
+  --hema-soft:#E7E3F6;
+  --eosin:#C9467A;     /* eosin */
+  --eosin-soft:#F8E1EA;
+  --max:1180px;
+  --gutter:clamp(16px,4vw,48px);
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--hema);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--eosin)}
+:focus-visible{outline:2px solid var(--eosin);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:12px;z-index:100;background:#fff;padding:8px 12px}
 
-<STYLE type="text/css">
-
-body
-{
-margin: 20px;
-padding: 20px;
-font-family: "Avenir", sans-serif, Courier, Serif;
-
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(247,247,250,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;letter-spacing:-.01em;font-size:18px}
+.brand-mark{flex:none;width:40px;height:40px;border-radius:50%}
+nav.main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav.main a{display:block;padding:8px 12px;border-radius:999px;color:var(--ink-2);text-decoration:none;font-size:15px;font-weight:500}
+nav.main a:hover,nav.main a[aria-current="true"]{color:var(--hema);background:var(--hema-soft)}
+.menu-btn{display:none;background:none;border:1px solid var(--rule);border-radius:8px;padding:6px 10px;font:500 15px var(--sans);color:var(--ink)}
+@media (max-width:820px){
+  .menu-btn{display:block}
+  nav.main{position:absolute;left:0;right:0;top:60px;background:var(--paper);border-bottom:1px solid var(--rule);display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;padding:8px var(--gutter) 16px}
+  nav.main a{padding:12px 4px;border-radius:0;border-bottom:1px solid var(--rule)}
 }
 
-DIV.content
-{
-border: 0px solid #5f5f5f;
-width: 650px;
-margin: 0;
-padding: 1em;
-position: absolute;
-background-color: #FFFFFF;
-left: 240px;
-top: 20px;
-}
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(40px,6vw,72px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font:600 clamp(34px,4.4vw,58px)/1.05 var(--sans);letter-spacing:-.03em;margin:0 0 24px;max-width:17ch;text-wrap:balance}
+.hero .lede{font:400 clamp(19px,1.7vw,22px)/1.5 var(--serif);color:var(--ink-2);max-width:34em;margin:0 0 28px}
+.hero .where{font-size:15px;color:var(--ink-3);margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--hema)}
+.btn.solid{background:var(--hema);color:#fff}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.line{color:var(--hema)}
+.btn.line:hover{background:var(--hema-soft);color:var(--hema)}
+.specimen{position:relative}
+.specimen canvas{width:100%;height:auto;aspect-ratio:1/0.86;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
+.legend button{all:unset;cursor:pointer;display:flex;align-items:center;gap:7px;padding:3px 0}
+.legend button:focus-visible{outline:2px solid var(--eosin);outline-offset:2px}
+.legend i{width:11px;height:11px;border-radius:50%;flex:none}
+.legend button[aria-pressed="true"]{color:var(--ink);font-weight:600}
+.specimen figcaption{font-size:12.5px;color:var(--ink-3);margin-top:10px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.specimen{max-width:560px}}
 
-DIV.bar
-{
-border: 0px solid #5f5f5f;
-width: 200px;
-height: 300px;
-margin: 0;
-padding: 0;
-position: absolute;
-left: 65px;
-top: 45px;
-text-align: right;
-}
+/* affiliations */
+.affil{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:#fff}
+.affil .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;padding-top:18px;padding-bottom:18px}
+.affil p{margin:0;font-size:14px;color:var(--ink-3)}
+.affil a{font-size:14.5px;font-weight:500;color:var(--ink-2);text-decoration:none}
+.affil a:hover{color:var(--hema)}
 
-div.row
-{
-display: flex;
-flex-wrap: wrap;
-}
+/* sections */
+section.block{padding:clamp(56px,8vw,112px) 0}
+section.alt{background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 56px;margin-bottom:clamp(32px,5vw,56px);align-items:end}
+.head h2{font:600 clamp(30px,3.6vw,46px)/1.05 var(--sans);letter-spacing:-.03em;margin:0}
+.head p{margin:0;font:400 19px/1.55 var(--serif);color:var(--ink-2);max-width:36em}
+@media (max-width:820px){.head{grid-template-columns:1fr}}
 
-div.intro
-{
-width: 400px; 
-word-wrap: normal;  
-}
+/* research themes */
+.theme{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,64px);padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--rule);align-items:start}
+.theme:last-child{border-bottom:1px solid var(--rule)}
+.theme figure{margin:0;position:sticky;top:84px}
+.fig-open{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-height:260px;padding:20px;background:#fff;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in;transition:border-color .15s}
+.fig-open:hover{border-color:var(--hema)}
+.fig-open:focus-visible{outline:2px solid var(--eosin);outline-offset:3px}
+.fig-open img{width:auto;max-width:100%;height:auto;max-height:420px;object-fit:contain}
+.theme figcaption{font-size:13px;color:var(--ink-3);margin-top:8px;text-align:right}
+@media (max-width:820px){.theme figure{position:static}.fig-open{min-height:0}}
+/* figure viewer */
+dialog.viewer{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible}
+dialog.viewer::backdrop{background:rgba(29,26,51,.86)}
+.viewer img{display:block;width:min(1000px,94vw);max-height:84vh;height:auto;object-fit:contain;box-sizing:border-box;background:#fff;border-radius:6px;padding:12px}
+.viewer p{color:#fff;font-size:14.5px;margin:10px 4px 0;display:flex;justify-content:space-between;gap:16px}
+.viewer button{all:unset;cursor:pointer;color:#fff;font-weight:600;white-space:nowrap}
+.viewer button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.theme h3{font:600 26px/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 12px}
+.theme .q{font:italic 400 20px/1.45 var(--serif);color:var(--hema);margin:0 0 14px}
+.theme p{margin:0 0 14px;max-width:38em;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--hema-soft);color:var(--hema);font-weight:500}
+.theme.e .tags li{background:var(--eosin-soft);color:#8E2552}
+.theme .key{font-size:14.5px;margin-top:6px}
+@media (max-width:820px){.theme{grid-template-columns:1fr}}
 
-.profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates exactly 2 equal columns */
-  gap: 0px; /* Adjust the gap between profiles */
-}
+/* tumors */
+.tumors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.tumor{padding:22px 22px 26px 0;border-right:1px solid var(--rule)}
+.tumor+.tumor{padding-left:22px}
+.tumor:last-child{border-right:0}
+.tumor h3{font:600 20px/1.2 var(--sans);margin:0 0 8px;letter-spacing:-.01em}
+.tumor p{margin:0;font-size:15.5px;color:var(--ink-2)}
+@media (max-width:900px){.tumors{grid-template-columns:1fr 1fr}.tumor{border-right:0;border-bottom:1px solid var(--rule);padding:20px 16px 20px 0}.tumor+.tumor{padding-left:0}.tumor:nth-child(even){padding-left:16px;border-left:1px solid var(--rule)}}
+@media (max-width:520px){.tumors{grid-template-columns:1fr}.tumor:nth-child(even){padding-left:0;border-left:0}}
+.methods{margin-top:40px;display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.methods p{margin:0 6px 0 0;font-size:14.5px;color:var(--ink-3)}
+.methods span{font-size:14px;padding:6px 12px;border:1px solid var(--rule);border-radius:999px;background:#fff;color:var(--ink-2)}
 
-.profile-container {
-  display: grid;
-  grid-template-columns: auto 1fr; /* Image width auto, intro takes remaining */
-  gap: 15px;
-  border-bottom: 1px solid #ccc; /* Only bottom border */
-  padding: 15px;
-  align-items: center; /* Vertically align image and intro */
-  margin-bottom: 10px; /* Add a small space between the bottom borders */
-}
+/* publications */
+.pubs{list-style:none;margin:0;padding:0}
+.pub{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--rule)}
+.pub:last-child{border-bottom:1px solid var(--rule)}
+.pub img{width:150px;height:110px;object-fit:cover;border-radius:4px;background:var(--paper-2)}
+.pub h3{font:500 22px/1.3 var(--serif);margin:0 0 6px;letter-spacing:-.005em}
+.pub h3 a{color:var(--ink);text-decoration:none}
+.pub h3 a:hover{color:var(--hema);text-decoration:underline}
+.pub .venue{font-size:14.5px;font-weight:600;color:var(--hema);margin:0 0 8px}
+.pub .venue .st{font-weight:500;color:var(--eosin)}
+.pub details{font-size:14px;color:var(--ink-3)}
+.pub summary{cursor:pointer;color:var(--ink-2);width:max-content}
+.pub details p{margin:8px 0 0;max-width:62em}
+.pub b{color:var(--ink-2);font-weight:600}
+.more{margin-top:24px;font-size:15.5px}
+@media (max-width:620px){.pub{grid-template-columns:1fr;gap:14px}.pub img{width:100%;height:180px}}
 
-.profile-container img {
-  width: 120px; /* Adjust image width as needed */
-  height: auto;
-  object-fit: contain;
-}
+/* news */
+.news{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.news article{border-top:3px solid var(--hema);padding-top:16px}
+.news article:nth-child(2){border-top-color:var(--eosin)}
+.news article:nth-child(4){border-top-color:var(--ink)}
+.news h3{font:600 18px/1.3 var(--sans);margin:0 0 8px;letter-spacing:-.01em}
+.news p{margin:0;font-size:15.5px;color:var(--ink-2)}
+@media (max-width:900px){.news{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.news{grid-template-columns:1fr}}
 
-.intro h3 {
-  margin-top: 0;
-}
+/* people */
+.pi{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+.pi img{width:220px;height:260px;object-fit:cover;border-radius:6px}
+.pi h3{font:600 30px/1.1 var(--sans);letter-spacing:-.02em;margin:0 0 6px}
+.pi .role{margin:0 0 14px;color:var(--hema);font-weight:600}
+.pi p{margin:0 0 12px;color:var(--ink-2);max-width:40em}
+.pi .lbl{color:var(--ink-3);margin-right:6px}
+.pi .links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+@media (max-width:620px){.pi{grid-template-columns:1fr}.pi img{width:160px;height:190px}}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:32px 24px}
+.person img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;background:var(--paper-2);margin-bottom:12px}
+.person h4{font:600 17px/1.25 var(--sans);margin:0}
+.person .role{font-size:14.5px;color:var(--hema);margin:2px 0 6px;font-weight:500}
+.person .bio{font-size:14px;color:var(--ink-2);margin:0 0 4px}
+.person .bio span{color:var(--ink-3);margin-right:4px}
+.person a{font-size:13.5px;word-break:break-all}
+.alumni{margin-top:56px}
+.alumni h3{font:600 20px var(--sans);margin:0 0 14px}
+.alumni ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px 24px}
+.alumni li{font-size:15.5px;padding:10px 0;border-top:1px solid var(--rule)}
+.alumni li span{display:block;color:var(--ink-3);font-size:14px}
 
-p.link
-{
-color: black;
-font-family: "Avenir", sans-serif, Courier, Serif;
-font-size: 16px;
-font-weight: bold;
-text-align: left;
-}
+/* join */
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.path{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:28px}
+.path h3{font:600 22px/1.2 var(--sans);margin:0 0 10px;letter-spacing:-.015em}
+.path p{margin:0 0 12px;font-size:15.5px;color:var(--ink-2)}
+.path ul{margin:0 0 14px;padding-left:18px;font-size:15.5px;color:var(--ink-2)}
+.path .status{display:inline-block;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--eosin-soft);color:#8E2552;margin-bottom:14px}
+@media (max-width:900px){.paths{grid-template-columns:1fr}}
+.mentor{margin-top:clamp(32px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px 56px;padding-top:32px;border-top:2px solid var(--ink)}
+.mentor h3{font:600 24px/1.2 var(--sans);margin:0;letter-spacing:-.02em}
+.mentor ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.mentor li{font:400 18px/1.5 var(--serif);color:var(--ink-2);padding-left:22px;position:relative}
+.mentor li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--hema)}
+@media (max-width:820px){.mentor{grid-template-columns:1fr}}
 
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,5vw,64px)}
+.contact dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:16px}
+.contact dt{color:var(--ink-3)}
+.contact dd{margin:0}
+.map{border-radius:8px;overflow:hidden;border:1px solid var(--rule);min-height:300px;background:var(--paper-2)}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
 
-a:link, a:link.inlink, a:visited.inlink, a:visited
-{
-color: #0000FF;
-}
+footer{padding:36px 0 48px;font-size:14px;color:var(--ink-3)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--ink-2)}
 
+/* additions for scientific summaries and resource links */
+.pub-summary{font-size:15px;line-height:1.55;color:var(--ink-2);margin:0 0 10px;max-width:65em}
+.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.resource{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:26px}
+.resource h3{font:600 21px/1.25 var(--sans);margin:0 0 12px}
+.resource p{color:var(--ink-2);font-size:15.5px;margin:0 0 16px}
+.resource a{font-weight:600;font-size:14.5px}
+.resource-note{font-size:13px;color:var(--ink-3)}
+.news time{display:block;font-size:13px;font-weight:600;color:var(--hema);margin-bottom:9px}
+.location-panel{min-height:300px;padding:35px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.location-panel h3{font:600 24px/1.2 var(--sans);margin:0 0 12px}
+.location-panel p{color:var(--ink-2);margin:0 0 22px}
+@media (max-width:900px){.resource-grid{grid-template-columns:1fr}}
 
-a:link.minlink, a:visited.minlink
-{
-color: #000000;
-text-decoration: none;
-font-weight: bold;
-}
+/* funding and support */
+.grants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;list-style:none;margin:0 0 36px;padding:0}
+.grants li{border-top:3px solid var(--hema);padding-top:16px}
+.grants li:nth-child(2){border-top-color:var(--eosin)}
+.grants li:nth-child(3){border-top-color:var(--ink)}
+.grants .fn{font:600 18px/1.3 var(--sans);margin:0 0 6px;letter-spacing:-.01em}
+.grants .fd{font-size:15px;color:var(--ink-2);margin:0}
+.funders{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.funders li{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:18px;display:flex;align-items:center;justify-content:center}
+.funders img{width:100%;height:84px;object-fit:contain}
+.funders li{min-height:122px}
+.logo-text{font:600 16px/1.3 var(--sans);color:var(--ink-2);text-align:center}
+@media (max-width:820px){.funders{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.grants{grid-template-columns:1fr}}
+@media (max-width:520px){.funders{grid-template-columns:repeat(2,minmax(0,1fr))}.funders img{height:70px}}
+</style>
+<link href="https://akdemirlab.github.io/" rel="canonical"/><link rel="icon" type="image/png" sizes="32x32" href="img/logo-32.png"/><link rel="apple-touch-icon" href="img/logo-180.png"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"ResearchOrganization","name":"Akdemir Lab","url":"https://akdemirlab.github.io/","parentOrganization":{"@type":"Organization","name":"The University of Texas MD Anderson Cancer Center"},"researchArea":["Spatial cancer genomics","Cancer genome evolution","Extrachromosomal DNA","Brain tumors","Chromatin organization"]}</script></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap">
+<a aria-label="Akdemir Lab, back to top" class="brand" href="#top">
+<img src="img/logo-96.png" alt="" width="40" height="40" class="brand-mark">
+      Akdemir Lab
+    </a>
+<button aria-controls="nav" aria-expanded="false" class="menu-btn">Menu</button>
+<nav aria-label="Main" class="main" id="nav">
+<ul>
+<li><a href="#research">Research</a></li><li><a href="#software">Software &amp; data</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#people">People</a></li>
+<li><a href="#join">Join us</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="hero" id="top">
+<div class="wrap">
+<div>
+<h1>Deciphering central nervous system tumors for better diagnosis and treatment</h1>
+<p class="lede">We investigate how cancer genomes evolve, how oncogenic alterations reshape the tumor microenvironment, and how these changes influence disease progression and treatment response. By integrating spatial and single-cell genomics, 3D genome organization, and patient-derived tumors, we connect discoveries about genome structure to clinically relevant questions.</p>
+<p class="where">Departments of Neurosurgery and Genomic Medicine · Brain Tumor Center · The University of Texas MD Anderson Cancer Center, Houston</p>
+<div class="btns">
+<a class="btn solid" href="#research">Explore our research</a>
+<a class="btn line" href="#contact">Contact us</a>
+</div>
+</div>
+<figure class="specimen" style="margin:0">
+<canvas aria-label="Illustrative spatial transcriptomics map of a glioma tissue section, with spots colored by cell niche." height="946" id="spots" role="img" width="1100"></canvas>
+<ul aria-label="Highlight a niche" class="legend" id="legend"></ul>
+<figcaption>Illustrative spot map of a glioma section, colored by niche. Select a niche to highlight it.</figcaption>
+</figure>
+</div>
+</div>
+<div class="affil">
+<div class="wrap">
+<p>Part of</p>
+<a href="https://www.mdanderson.org/research/departments-labs-institutes/spores/brain-cancer-spore.html">NCI Brain Cancer SPORE</a>
+<a href="https://www.mdanderson.org/cancermoonshots/cancer-types/Glioblastoma.html">MD Anderson Glioblastoma Moonshot</a>
+<a href="https://breakthroughcancer.org/">Break Through Cancer</a>
+<a href="https://www.4dnucleome.org">NIH 4D Nucleome</a>
+<a href="https://www.nature.com/collections/afdejfafdb/">ICGC/TCGA PCAWG</a>
+</div>
+</div>
+<section class="block" id="research">
+<div class="wrap">
+<div class="head">
+<h2>Research</h2>
+<p>Cancer genome evolution and spatial tissue organization are intertwined. We combine patient samples, advanced sequencing, imaging, and computational methods to understand how genomic alterations change tumor biology.</p>
+</div>
+<article class="theme"><figure><button type="button" class="fig-open" aria-label="View full figure: Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases"><img alt="Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases" loading="lazy" src="img/research/esop.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>ecDNA, oncogene amplification and cancer evolution</h3><p class="q">How does the architecture of oncogene amplification influence tumor evolution and response to therapy?</p><p>We study extrachromosomal DNA (ecDNA), homogeneously staining regions, and other amplification structures in gliomas and brain metastases. By integrating DNA FISH, whole-genome sequencing, and spatial transcriptomics, we investigate how amplification architecture relates to tumor cell states, immune organization, and clinical outcomes.</p><p class="key">Key work: <a href="https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1">ERBB2 amplification in esophageal adenocarcinoma brain metastases</a></p><ul class="tags"><li>ecDNA</li><li>ERBB2 and EGFR</li><li>DNA FISH</li><li>Brain metastases</li><li>Therapy response</li></ul></div></article>
+<article class="theme e">
+<figure><button type="button" class="fig-open" aria-label="View full figure: Watercolor-style illustration of glioma tissue and its microenvironment"><img alt="Watercolor-style illustration of glioma tissue and its microenvironment" loading="lazy" src="img/research/watercolor.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
+<div>
+<h3>Spatial ecosystems of brain tumors</h3>
+<p class="q">Which oncogenic drivers reshape the cells around them, and where?</p>
+<p>We use spatial transcriptomics and single-cell profiling to study gliomas in their native tissue context. Integrating these maps with genomic alterations reveals how oncogenic drivers relate to malignant cell states, immune populations, vasculature, and spatial neighborhoods across primary and recurrent tumors.</p>
+<p class="key">Key work: <a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.abstract">Oncogenic drivers shape the tumor microenvironment in human gliomas</a></p>
+<ul class="tags"><li>Spatial transcriptomics</li><li>Single-cell RNA and ATAC</li><li>Tumor microenvironment</li><li>Glioma</li></ul>
+</div>
+</article>
+<article class="theme"><figure><button type="button" class="fig-open" aria-label="View full figure: Hematoxylin and eosin stained brain tumor tissue"><img alt="Hematoxylin and eosin stained brain tumor tissue" loading="lazy" src="img/research/giantcell.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>Treatment-driven evolution and recurrence</h3><p class="q">How do treatment and acquired mutations reshape recurrent gliomas?</p><p>We study longitudinal tumor genomes, temozolomide-associated hypermutation, mismatch-repair alterations, and changes in malignant cell states after therapy. Our goal is to connect the evolutionary history of recurrent tumors with their changing spatial ecosystems and identify vulnerabilities that emerge during progression.</p><ul class="tags"><li>Longitudinal genomics</li><li>TMZ hypermutation</li><li>DNA repair</li><li>Glioma recurrence</li></ul></div></article>
+<article class="theme e"><figure><button type="button" class="fig-open" aria-label="View full figure: Schematic of layered chordoma data: chromatin accessibility tracks, chromosome structure and a spatial map of tumor cells"><img alt="Schematic of layered chordoma data: chromatin accessibility tracks, chromosome structure and a spatial map of tumor cells" loading="lazy" src="img/research/chordoma.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>Chordoma evolution and treatment resistance</h3><p class="q">What keeps TBXT switched on in chordoma, and which tumors will come back after treatment?</p><p>Chordoma is a rare tumor of the skull base and spine driven by the developmental transcription factor TBXT (brachyury). We are building a multi-omic atlas of chordomas from the skull base, mobile spine and sacrum, including tumors sampled at several points during treatment.</p><p>By integrating single-cell, genomic and spatial profiling, we study how chordomas are regulated, how they evolve, and how they respond to therapy.</p><ul class="tags"><li>TBXT (brachyury)</li><li>scATAC-seq</li><li>Long-read WGS</li><li>Spatial transcriptomics</li><li>Radiation therapy</li></ul></div></article>
+<article class="theme">
+<figure><button type="button" class="fig-open" aria-label="View full figure: Figure showing somatic mutation density across chromatin domains"><img alt="Figure showing somatic mutation density across chromatin domains" loading="lazy" src="img/research/signatures.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
+<div>
+<h3>Chromatin architecture and mutation</h3>
+<p class="q">How does the folded genome decide where mutations land?</p>
+<p>Two meters of DNA fold into a nucleus a few micrometers wide, organized into self-interacting domains (TADs) that control gene regulation and DNA replication. We showed that somatic mutation rates track this 3D structure across cancers. We now use Hi-C and single-cell chromatin accessibility in brain tumors to connect genome folding with DNA damage, repair and tumor evolution.</p>
+<p class="key">Key work: <a href="https://www.nature.com/articles/s41588-020-0708-0">Nature Genetics 2020</a></p>
+<ul class="tags"><li>Hi-C</li><li>scATAC-seq</li><li>Mutational processes</li><li>Epigenome</li></ul>
+</div>
+</article>
+<article class="theme e">
+<figure><button type="button" class="fig-open" aria-label="View full figure: Hi-C contact map showing a disrupted chromatin domain at a rearrangement"><img alt="Hi-C contact map showing a disrupted chromatin domain at a rearrangement" loading="lazy" src="img/research/svsinhic.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
+<div>
+<h3>Complex rearrangements and tumor evolution</h3>
+<p class="q">What do shattered chromosomes do to gene regulation, and does it matter for patients?</p>
+<p>Catastrophic rearrangements rewire which genes sit next to which enhancers. We develop methods that use chromatin organization and long-read whole-genome sequencing to reconstruct rearranged chromosomes and predict the regulatory changes they cause, and we follow these changes from primary tumors to recurrence and brain metastasis.</p>
+<p class="key">Key work: <a href="https://www.nature.com/articles/s41588-019-0564-y">Nature Genetics 2020</a></p>
+<ul class="tags"><li>Long-read WGS</li><li>Structural variants</li><li>Brain metastasis</li><li>Clinical genomics</li></ul>
+</div>
+</article>
+</div>
+</section>
+<section class="block alt" id="tumors">
+<div class="wrap">
+<div class="head">
+<h2>Tumors we study</h2>
+<p>Our questions begin with patient tumors and are shaped by collaborations across neurosurgery, neuropathology, oncology, genomics, and computational biology.</p>
+</div>
+<div class="tumors">
+<div class="tumor"><h3>Glioblastoma and gliomas</h3><p>The most common malignant brain tumors in adults, and the focus of our spatial and single-cell work.</p></div>
+<div class="tumor"><h3>Chordoma</h3><p>A rare tumor of the skull base and spine with few treatment options and little genomic data.</p></div>
+<div class="tumor"><h3>Brain metastases</h3><p>We investigate how metastatic cancers, including esophageal adenocarcinoma and HER2-positive breast cancer, evolve and adapt within the brain.</p></div>
+<div class="tumor"><h3>Other CNS tumors</h3><p>Rare and pediatric tumors where integrative multi-omics can sharpen diagnosis.</p></div>
+</div>
+<div aria-label="Methods" class="methods">
+<p>Methods we work with</p>
+<span>Spatial transcriptomics</span><span>scRNA-seq</span><span>scATAC-seq</span><span>Hi-C</span><span>Nanopore long-read WGS</span><span>Whole-genome sequencing</span><span>Algorithm development</span>
+<span>DNA FISH</span><span>ecDNA analysis</span></div>
+</div>
+</section>
+<section class="block" id="software"><div class="wrap"><div class="head"><h2>Software &amp; data</h2><p>We develop computational approaches to interpret complex cancer genomes and spatially resolved tumors. Explore our publicly available tools and research outputs.</p></div><div class="resource-grid"><article class="resource"><h3>Lab code and pipelines</h3><p>Methods and open-source repositories from the group, including tools for cancer genome analysis.</p><a href="https://github.com/akdemirlab">Explore GitHub repositories →</a></article><article class="resource"><h3>Long-read genome analysis</h3><p>Workflows for interpreting structural variants, copy-number changes, and complex amplification from nanopore sequencing. Links to individual tools will be added as they are released.</p><span class="resource-note">Research in progress</span></article><article class="resource"><h3>Spatial genomics resources</h3><p>Associated preprints and publications describe the spatial and genomic datasets generated by the lab. Public data portals will be linked when releases are available.</p><a href="#publications">Explore selected publications →</a></article></div></div></section>
+<section class="block alt" id="publications">
+<div class="wrap">
+<div class="head">
+<h2>Selected publications</h2>
+<p>The full and current list is on <a href="https://scholar.google.com/citations?user=W2WBgzEAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+</div>
+<ol class="pubs">
+<li class="pub">
+<img alt="" loading="lazy" src="img/research/watercolor.jpg"/>
+<div>
+<h3><a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.abstract">Oncogenic drivers shape the tumor microenvironment in human gliomas</a></h3>
+<p class="venue">bioRxiv 2025 <span class="st">· preprint</span></p><p class="pub-summary">Integrating spatial and genomic profiling to investigate how oncogenic drivers relate to the glioma microenvironment.</p>
+<details><summary>Authors</summary><p>B Zhao*, CY Cho*, L Ye*, T Keal*, T Mitchell*, I Martin-Barrio*, C Abi Faraj, M Unal, J Alsing, NM Lawson, ER Kim, F Chavez, KM Rangel, SK Singh, JH McCarthy, DM Ashley, WKA Yung, V Puduvalli, G Nir, JS Weinberg, L Wang, KL Ligon, G Genovese, P Van Loo, PA Futreal, JT Huse†, JR Dixon†, FF Lang†, <b>KC Akdemir</b>†</p></details>
+</div>
+</li>
+<li class="pub">
+<img alt="" loading="lazy" src="img/research/esop.jpg"/>
+<div>
+<h3><a href="https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1">Recurrent ERBB2 alterations are associated with esophageal adenocarcinoma brain metastases</a></h3>
+<p class="venue">Cancer Cell <span class="st">· accepted in principle; final publication details pending</span></p><p class="pub-summary">Identifying prevalent ERBB2 amplification in esophageal adenocarcinoma brain metastases and associations between amplification architecture and clinical outcomes.</p>
+<details><summary>Authors</summary><p>N Lawson*, L Ye*, C Cho*, B Zhao*, T Mitchell, I Martin-Barrio, B Beernaert, M Banu, Y Lissanu, S Shaffer, H Tawbi, J Li, MK Gule-Monroe, JT Huse, MB Murphy, F Yin, FF Lang, EE Parker, JS Weinberg†, <b>KC Akdemir</b>†</p></details>
+</div>
+</li>
+<li class="pub">
+<img alt="" loading="lazy" src="img/research/signatures.jpg"/>
+<div>
+<h3><a href="https://www.nature.com/articles/s41588-020-0708-0">Somatic mutation distributions in cancer genomes vary with three-dimensional chromatin structure</a></h3>
+<p class="venue">Nature Genetics 2020</p><p class="pub-summary">Linking regional somatic mutation patterns to the three-dimensional structure of the cancer genome.</p>
+<details><summary>Authors</summary><p><b>KC Akdemir</b>†, VT Le, JM Kim, S Killcoyne, DA King, Y Lin, Y Tian, A Inoue, SB Amin, FS Robinson, M Nimmakayalu, RE Herrera, EJ Lynn, K Chan, S Seth, LJ Klimczak, M Gerstung, DA Gordenin, J O'Brien, L Li, YL Deribe, RG Verhaak, PJ Campbell, R Fitzgerald, AJ Morrison, JR Dixon†, PA Futreal†</p></details>
+</div>
+</li>
+<li class="pub">
+<img alt="" loading="lazy" src="img/research/svsinhic.jpg"/>
+<div>
+<h3><a href="https://www.nature.com/articles/s41588-019-0564-y">Disruption of chromatin folding domains by somatic genomic rearrangements in human cancer</a></h3>
+<p class="venue">Nature Genetics 2020</p><p class="pub-summary">Investigating how structural rearrangements disrupt chromatin domains and regulatory organization.</p>
+<details><summary>Authors</summary><p><b>KC Akdemir</b>, VT Le, S Chandran, Y Li, RG Verhaak, R Beroukhim, PJ Campbell, L Chin, JR Dixon, PA Futreal, PCAWG Structural Variation Working Group and PCAWG Consortium</p></details>
+</div>
+</li>
+</ol>
+<p class="more">* co-first authors, † co-corresponding authors</p>
+</div>
+</section>
+<section class="block" id="news">
+<div class="wrap">
+<div class="head"><h2>News</h2><p>Recent milestones from the lab.</p></div>
+<div class="news"><article><time datetime="2026-09">September 2026</time><h3>NIH R35 MIRA award</h3><p>The lab received an NIH R35 MIRA award supporting our research program in cancer genome biology.</p></article><article><time datetime="2026-09">September 2026</time><h3>ERBB2 brain metastasis study</h3><p>Our study of ERBB2 amplification architecture in esophageal adenocarcinoma brain metastases was accepted in principle at <em>Cancer Cell</em>; publication details will follow.</p></article><article><time datetime="2025">2025</time><h3>Spatial glioma study</h3><p>We shared our work connecting oncogenic drivers to the tumor microenvironment in human gliomas. <a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.abstract">Read the preprint</a>.</p></article><article><h3>Interested in joining?</h3><p>Learn about postdoctoral and student opportunities and reach out about current availability. <a href="#join">Explore opportunities</a>.</p></article></div>
+</div>
+</section>
+<section class="block alt" id="people">
+<div class="wrap">
+<div class="head"><h2>People</h2><p>Computational biologists, data scientists and trainees from five countries, working closely with clinical and wet-lab collaborators.</p></div>
+<div class="pi">
+<img alt="Kadir C. Akdemir" loading="lazy" src="img/people/kadir.jpg"/>
+<div>
+<h3>Kadir C. Akdemir, PhD</h3>
+<p class="role">Principal investigator</p>
+<p><span class="lbl">From</span> Siirt, Turkey</p>
+<p><span class="lbl">Hobbies</span> spending time with his son and building Lego</p>
+<div class="links"><a href="mailto:kcakedemir@mdanderson.org">kcakedemir@mdanderson.org</a><a href="AkdemirCV.pdf">CV (PDF)</a><a href="https://scholar.google.com/citations?user=W2WBgzEAAAAJ&amp;hl=en">Google Scholar</a><a href="https://twitter.com/kcakdemir">@kcakdemir</a></div>
+</div>
+</div>
+<div class="people" id="members"></div>
+<div class="alumni">
+<h3>Alumni</h3>
+<ul id="alumni"></ul>
+</div>
+</div>
+</section>
+<section class="block" id="join">
+<div class="wrap">
+<div class="head"><h2>Join us</h2><p>We're looking for curious people who want to turn large, messy patient datasets into biological insight. We train lab members across computational and experimental approaches and support each person's next career step.</p></div>
+<div class="paths">
+<div class="path">
+<h3>Postdoctoral fellows</h3>
+<p>Develop and apply algorithms for spatial transcriptomics, single-cell chromatin, Hi-C and long-read genome data from primary brain tumors. You'll work on tumor behavior, clinical outcomes and resistance to therapy, and build your own research program.</p>
+<p>Email Kadir with your CV, a short note on your background, how our interests intersect and your timeframe. Informal inquiries are welcome.</p>
+<a href="https://jobrxiv.org/job/md-anderson-cancer-center-27778-postdoctoral-fellow-cancer-chromatin-organization/">See the job posting</a>
+</div>
+<div class="path">
+<h3>PhD and rotation students</h3>
+<p>We are part of the <a href="https://gsbs.uth.edu/">MD Anderson UTHealth Houston Graduate School of Biomedical Sciences (GSBS)</a>. Apply to the graduate program rather than directly to the lab; first-year students rotate through about three labs before choosing a thesis lab.</p>
+<p>We usually host rotation students every quarter. Prospective students are welcome to get in touch with questions.</p>
+</div>
+<div class="path">
+<h3>Undergraduate and high school students</h3>
+<p>We host students through the <a href="https://www.mdanderson.org/education-training/degrees-programs/summer-research-programs/cprit-cure.html">CPRIT-CURE Summer Undergraduate Program</a> and the PCCSM program for STEM-focused high school and college students and first-year medical students.</p>
+<p>We especially welcome students from groups underrepresented in science and medicine. Contact Kadir about open positions.</p>
+</div>
+</div>
+<div class="mentor">
+<h3>How we mentor</h3>
 
-a:hover, a:hover.inlink, a:hover.minlink
-{
-color: #EEC900;
-text-decoration: none;
-font-weight: bold;
-}
+<ul>
+<li>Every trainee owns a project with a clear question, and gets regular one-on-one time to shape it.</li>
+<li>We write code that others can read and rerun, and we share methods and data openly.</li>
+<li>Computational and clinical collaborators sit at the same table, so analyses stay close to patients.</li>
+<li>We plan careers early, whether the next step is academia, industry or medicine.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="block alt" id="support">
+<div class="wrap">
+<div class="head"><h2>Funding and support</h2><p>Our research is made possible by federal, foundation and institutional support. We are grateful to our funders and to the patients and families who make this work possible.</p></div>
+<ul class="grants" aria-label="Grants and programs">
+<li><p class="fn">NIH NIGMS R35 MIRA</p><p class="fd">Maximizing Investigators' Research Award to Kadir C. Akdemir from the National Institute of General Medical Sciences</p></li>
+<li><p class="fn">Andrew M. McDougall Brain Metastasis Clinic and Research Program</p><p class="fd">MD Anderson Cancer Center</p></li>
+</ul>
+<ul class="funders" aria-label="Funding organizations">
+<li><img src="img/funders/nigms.png" alt="National Institute of General Medical Sciences (NIGMS)" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/nci.png" alt="National Cancer Institute" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/break-through-cancer.png" alt="Break Through Cancer" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/mda-moon-shots.png" alt="MD Anderson Moon Shots Program" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/chordoma-foundation.png" alt="Chordoma Foundation" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/broach-foundation.png" alt="The Broach Foundation for Brain Cancer Research" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/kleberg-foundation.png" alt="Robert J. Kleberg, Jr. and Helen C. Kleberg Foundation" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+<li><img src="img/funders/emerson-collective.png" alt="Emerson Collective" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:this.alt}))"></li>
+</ul>
+</div>
+</section>
+<section class="block" id="contact">
+<div class="wrap">
+<div class="head"><h2>Contact</h2><p>Prospective lab members, collaborators and patients' advocates are welcome to reach out.</p></div>
+<div class="contact">
+<dl>
+<dt>Email</dt><dd><a href="mailto:kcakedemir@mdanderson.org">kcakedemir@mdanderson.org</a></dd>
+<dt>Location</dt><dd>Basic Science Research Building, 5th floor<br/>UT MD Anderson Brain Tumor Center<br/>Houston, Texas</dd>
+<dt>Social</dt><dd><a href="https://twitter.com/kcakdemir">@kcakdemir</a></dd>
+<dt>Code</dt><dd><a href="https://github.com/akdemirlab">github.com/akdemirlab</a></dd>
+</dl>
+<div class="map"><div class="location-panel"><h3>Find us in Houston</h3><p>Basic Science Research Building<br/>The University of Texas MD Anderson Cancer Center<br/>Houston, Texas</p><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=MD+Anderson+Basic+Science+Research+Building+Houston" rel="noopener noreferrer" target="_blank">View location on Google Maps ↗</a></div></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>© <span id="yr">2026</span> Akdemir Lab, The University of Texas MD Anderson Cancer Center</span>
+<span><a href="#support">Funding and support</a> · <a href="#top">Back to top</a></span>
+</div>
+</footer>
+<dialog class="viewer" id="viewer" aria-label="Figure viewer"><img alt="" id="viewer-img"><p><span id="viewer-cap"></span><button type="button" id="viewer-close">Close</button></p></dialog>
+<script>
+/* ---------- People: edit these lists to add or move members ---------- */
+const MEMBERS = [
+  {name:"Allison Anderson", role:"Senior research data coordinator", img:"img/people/allison.jpg", from:"Houston, Texas", hobbies:"playing with her three dogs, scrapbooking, and spending time with friends and family"},
+  {name:"Kate Cho", role:"PhD student", img:"img/people/kate.jpg", from:"Suwon, South Korea", hobbies:"playing with her dog, the gym, and trying new food places"},
+  {name:"Nora Lawson", role:"Data scientist", img:"img/people/nora.jpg", from:"Lampasas, Texas", hobbies:"swimming and hiking"},
+  {name:"Inés Martín Barrio", role:"Research assistant II", img:"img/people/ines.jpg", from:"Madrid, Spain", hobbies:""},
+  {name:"Thomas Mitchell", role:"PhD student, co-advised with Dr. Peter Van Loo", img:"img/people/thomas.jpg", from:"Guerneville, California", hobbies:"reading, video games, and pickleball"},
+  {name:"Mesut Unal", role:"Computational postdoc", img:"img/people/mesut.jpg", from:"Antalya, Turkey", hobbies:"painting, history, philosophy, martial arts, and bouldering"},
+  {name:"Lingqun Ye", role:"Data scientist (computational genomics)", img:"img/people/lingqun.jpg", from:"Hunan, China", hobbies:"camping, gaming, piano, and swimming"},
+  {name:"Bo Zhao", role:"Computational postdoc, co-advised with Dr. Ben Schrank", img:"img/people/bo.jpg", from:"Henan, China", hobbies:"riding and hiking"}
+];
+const ALUMNI = [
+  {name:"Tate Bregman", role:"Undergraduate student, Rice University"},
+  {name:"Ece Kilinc", role:"PhD student, co-advised with Dr. Jian Hu"},
+  {name:"Lana Al Hasani", role:"PhD rotation student"},
+  {name:"Ali Haider", role:"Medical student, co-advised with Dr. Lang"},
+  {name:"Aminah El-Titi", role:"High school student"},
+  {name:"Brittany Azie", role:"Summer student, UT Austin"},
+  {name:"Francisco Chavez", role:"Summer student, Johns Hopkins University"},
+  {name:"Andrea Conley", role:"Summer student, Baylor University"},
+  {name:"Ellie Kim", role:"Summer student, UT Austin"},
+  {name:"Brooke Maddox", role:"Summer student, UT Austin"},
+  {name:"Kristy Mendoza", role:"Summer student, Columbia University"},
+  {name:"Deven Pietrzak", role:"Summer student, MIT"},
+  {name:"Ellen Yin", role:"Summer student, UT Austin"}
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("members").innerHTML = MEMBERS.map(m => `
+  <div class="person">
+    <img src="${m.img}" alt="${esc(m.name)}" loading="lazy">
+    <h4>${esc(m.name)}</h4>
+    <p class="role">${esc(m.role)}</p>
+    ${m.from ? `<p class="bio"><span>From</span> ${esc(m.from)}</p>` : ""}
+    ${m.hobbies ? `<p class="bio"><span>Hobbies</span> ${esc(m.hobbies)}</p>` : ""}
+  </div>`).join("");
+document.getElementById("alumni").innerHTML = ALUMNI.map(a => `<li>${esc(a.name)}<span>${esc(a.role)}</span></li>`).join("");
+document.getElementById("yr").textContent = new Date().getFullYear();
 
-.footer {
-  position: fixed;
-margin: 0;
-padding: 0;
-left: 50px;
-bottom: 20px;
+/* ---------- Mobile menu ---------- */
+const btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+btn.addEventListener("click", () => { const o = nav.classList.toggle("open"); btn.setAttribute("aria-expanded", o); });
+nav.addEventListener("click", e => { if (e.target.tagName === "A") { nav.classList.remove("open"); btn.setAttribute("aria-expanded", false); }});
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }});
+document.addEventListener("click", e => { if (!nav.contains(e.target) && !btn.contains(e.target)) { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }});
+/* ---------- Highlight current section in nav ---------- */
+const links = [...nav.querySelectorAll("a")];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  links.forEach(l => l.getAttribute("href") === "#" + e.target.id ? l.setAttribute("aria-current", "true") : l.removeAttribute("aria-current"));
+}), {rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("section.block").forEach(s => io.observe(s));
+
+/* ---------- Hero: illustrative spatial transcriptomics spot map ---------- */
+(() => {
+  const cv = document.getElementById("spots"), ctx = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  const NICHES = [
+    {name:"Tumor core",            color:"#43308F"},
+    {name:"Invasive edge",         color:"#8C7BD9"},
+    {name:"Necrosis and hypoxia",  color:"#C9467A"},
+    {name:"Vascular niche",        color:"#E79A3C"},
+    {name:"Myeloid-rich",          color:"#2E9C8F"},
+    {name:"Normal brain",          color:"#C9C6D8"}
+  ];
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const cx = W*0.5, cy = H*0.5;
+  // tissue outline: wobbly ellipse
+  const wob = [...Array(6)].map(() => [rnd()*0.08, rnd()*Math.PI*2]);
+  const radius = a => 1 + wob.reduce((s,[amp,ph],i) => s + amp*Math.sin((i+2)*a+ph), 0);
+  const inside = (x,y) => { const dx=(x-cx)/(W*0.41), dy=(y-cy)/(H*0.41); const a=Math.atan2(dy,dx); return Math.hypot(dx,dy) < radius(a); };
+  // tumor center offset
+  const tx = cx + W*0.06, ty = cy - H*0.03;
+  const blobs = [...Array(4)].map(() => ({x: tx+(rnd()-.5)*W*0.25, y: ty+(rnd()-.5)*H*0.25, r: 30+rnd()*35}));
+  const vessels = [...Array(9)].map(() => { const a=rnd()*Math.PI*2, d=60+rnd()*170; return {x:tx+Math.cos(a)*d, y:ty+Math.sin(a)*d, r:14+rnd()*16}; });
+  const myel = [...Array(6)].map(() => { const a=rnd()*Math.PI*2, d=140+rnd()*80; return {x:tx+Math.cos(a)*d, y:ty+Math.sin(a)*d, r:22+rnd()*20}; });
+  const near = (x,y,list) => list.some(b => Math.hypot(x-b.x,y-b.y) < b.r);
+  const spots = [];
+  const step = 25, rr = 9.8;
+  for (let row=0, y=step; y<H-step/2; y+=step*0.866, row++) {
+    for (let x=step + (row%2?step/2:0); x<W-step/2; x+=step) {
+      if (!inside(x,y)) continue;
+      const d = Math.hypot((x-tx)/1.1, (y-ty)) + (rnd()-.5)*34;
+      let k;
+      if (near(x,y,blobs)) k = 2;
+      else if (near(x,y,vessels)) k = 3;
+      else if (d < 165) k = 0;
+      else if (near(x,y,myel)) k = 4;
+      else if (d < 240) k = 1;
+      else k = rnd() < 0.05 ? 1 : 5;
+      spots.push({x,y,k,t: d/320 + rnd()*0.15});
+    }
   }
-
-
-
-
-#contact
-{
-display: none;
-}
-
-#abstract
-{
-display: block;
-}
-
-#research
-{
-display: none;
-}
-
-#publications
-{
-display: none;
-}
-
-#members
-{
-display: none;
-}
-
-#news
-{
-display: none;
-}
-
-#lab
-{
-display: none;
-}
-
-
-
-</STYLE>
-
-<SCRIPT type="text/javascript">
-
-function homeShow()
-{
-document.getElementById("abstract").style.display="block";
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="none";
-document.getElementById("members").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="none";
-}
-
-function contactShow()
-{
-document.getElementById("contact").style.display="block";
-document.getElementById("publications").style.display="none";
-document.getElementById("members").style.display="none";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="none";
-}
-
-function publicationsShow()
-{
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="block";
-document.getElementById("members").style.display="none";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="none";
-}
-
-function membersShow()
-{
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="none";
-document.getElementById("members").style.display="block";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="none";
-}
-
-function newsShow()
-{
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="none";
-document.getElementById("members").style.display="none";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="block";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="none";
-}
-
-function researchShow()
-{
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="none";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("members").style.display="none";
-document.getElementById("research").style.display="block";
-document.getElementById("lab").style.display="none";
-}
-
-
-function joinShow()
-{
-document.getElementById("contact").style.display="none";
-document.getElementById("publications").style.display="none";
-document.getElementById("abstract").style.display="none";
-document.getElementById("news").style.display="none";
-document.getElementById("members").style.display="none";
-document.getElementById("research").style.display="none";
-document.getElementById("lab").style.display="block";
-}
-
-</SCRIPT>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127428632-1"></script>
-	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-
-  		gtag('config', 'UA-127428632-1');
-	</script>
-</HEAD>
-
-
-<BODY>
-
-
-<DIV class="bar">
-
-<P class="link"><A href="#" class="minlink" onclick="homeShow();">Home</A></P>
-<P class="link"><A href="#" class="minlink" onclick="researchShow();">Research</A></P>
-<P class="link"><A href="#" class="minlink" onclick="publicationsShow();">Publications</A></P>
-<P class="link"><A href="#" class="minlink" onclick="membersShow();">Members</A></P>
-<P class="link"><A href="#" class="minlink" onclick="newsShow();">News</A></P>
-<P class="link"><A href="#" class="minlink" onclick="joinShow();">Join</A></P>
-<P class="link"><A href="#" class="minlink" onclick="contactShow();">Contact</A></P>
-
-</DIV>
-
-
-
-<DIV class="content">
-  
-
-
-  <DIV id="abstract">
-
-    <h2> Akdemir Lab - Cancer Chromatin Biology </h2>
-<hr>
- <img src = "img/main.jpeg"  width="500" height="350" class="centerImage">
-
-<br><br>
-Our lab focuses on integrative computational analyses projects to advance efforts for precision cancer medicine. We are analyzing multi-omics datasets from primary human tumors such as long-read whole genome sequencing, genome-wide chromatin organization (Hi-C) and single-cell ATAC-sequencing from common (i.e. glioblastoma) or rare (i.e. chordoma) CNS tumor types to investigate how tumor evolution shapes the organization of chromatin in cancer cells and tumor microenvironment. 
-<br>
-<br>
-	  The lab is based in the <a
-    href="https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/neurosurgery.html" class = "minlink" target="_blank">Department
-    of Neurosurgery</a> at the MD Anderson Cancer Center. To learn
-    more about the goals of the lab, please check out the <a href="#" class="minlink" onclick="researchShow();">research</a> and <a href="#" class="minlink" onclick="publicationsShow();">publication</a> pages.<br>
-<br>
-    The Akdemir lab is part of several international scientific organizations such <a href="https://www.nature.com/collections/afdejfafdb/" class = "minlink" target="_blank"> the International Cancer Genome Consortium (ICGC-PCWAG)</a>, <a href="https://www.4dnucleome.org" class="minlink" target="_blank"> NIH Common 4D Nucleome program</a>,<a href="https://breakthroughcancer.org/" class ="minlink" target="_blank"> the BreakThrough Cancer Foundation</a>. We are also part of some institutional research efforts such <a href="https://www.mdanderson.org/cancermoonshots/cancer-types/Glioblastoma.html" class ="minlink" target="_blank">the MD Anderson GBM Moonshot efforts</a> as well as <a href="https://www.mdanderson.org/research/departments-labs-institutes/spores/brain-cancer-spore.html" class="minlink" target="_blank">NCI-MD Anderson Brain Cancer SPORE team</a>. <br><br>
-    Prospective graduate students, rotation students and
-    postdoctoral fellows are encouraged to get
-    in touch with Kadir. 
- 
-
-    </DIV>
-
-      <DIV id="research">
-
-<h2> Research </h2>
-<hr>
-	   <img src = "img/research.jpeg"  width="450" height="450" class="centerImage">
-	    <br><br>
-
-	  The three billion base pairs of the human genome, if stretched out linearly, would exceed 2 meters in length.  Remarkably, this amount of DNA is packaged inside of a nucleus that is 5-10 micrometers wide in diameter. The compaction of the genome in the nucleus is non-random. Recent evidence has indicated that a critical feature of genome organization is that regions of the genome form self-associated domain structures on a megabase scale1. These structures are generally known as topologically associated domains (TADs) and have been demonstrated to play a critical role in facilitating proper gene regulation. Our recent studies revealed that the integration of the TAD organization with cancer genomic datasets provides unique insights into the mechanisms and functional consequences of somatic alterations observed in human tumors.				<br><br>
-In our lab, we focus on the development and application of algorithms that analyze and interpret multi-omics data from individual patients for prospective clinical uses. Broadly, we strive to gain a better understanding of mutations (somatic and germline) in cancer cells which will enable new translational inventions and accelerate development of clinical interventions. 
-<h3> Elucidating the functional consequences of complex genomic alterations </h3>
-<hr>
-Cancer genomes are predominantly restructured due to somatically-acquired, catastrophic rearrangements. However, our ability to determine the clinical implications of these complex rearrangements in cancer genomes remains limited. We develop novel computational methods to utilize chromatin organization information for analyzing the rearranged chromosomes, and elicit information about the altered gene regulatory landscapes that result from these complex rearrangements. We apply these methods to investigate the potential clinical implications of altered chromosomes in human brain tumors, cancer types which exhibit the highest number of complex genomic rearrangements among human malignancies.
-<br>
-<hr>
-
-<h3> Investigating the influence of epigenome on mutational processes </h3>
-<hr>
-Somatic mutations arise during the life of a cell and in the generation of its progeny. Accumulation of mutations can lead to age-related diseases, and those occurring in cancer driver genes may ultimately lead to tumorigenesis and the development of clinically detectable disease. However, the spatio-temporal processes that direct mutation rates throughout cancer evolution are not fully understood. The hierarchical folding of genomic DNA within the nucleus is intimately linked with transcriptional regulation and DNA replication. We investigate the effects of three-dimensional genome organization on the distribution of somatic mutations in human cancers with the aim of elucidating the potential role of genome folding on DNA damage and repair processes. 
-<br>
-<hr>
-
-<h3> Developing computational methods for integrative analysis of large genomic datasets </h3>
-<hr>
-Our lab is involved multiple genomic characterization efforts involving generation of multi-omics datasets from patients with different tumor types or exhibiting a spectrum of clinical responses. Therefore, a key research are in the lab is to develop computational tools to mine and visualize diverse genomic assay outputs in order to expand our understanding of how different molecular processes are involved in tumor initiation, progression and response to cancer therapies. 
-
-</DIV>
-
-<DIV id="lab">
-<h2> Joining the lab </h2>
-<hr>
-	 We are actively seeking motivated and talented members to join our team. We strive to provide excellent training across a wide range of computational and experimental approaches.
-	 
-
-    <h3> Postdoctoral fellows </h3>
-
-    The Akdemir Lab is hiring multiple postdoctoral fellows. More information <a href="https://jobrxiv.org/job/md-anderson-cancer-center-27778-postdoctoral-fellow-cancer-chromatin-organization/" class="minlink" target="_blank">here </a>.   <br><br>
-
-Our lab aims to understand how three-dimensional chromatin organization influences somatic mutation occurrence during tumor evolution. To achieve these goals we generate three-dimensional chromatin organization (Hi-C), long-read sequencing whole-genome (Oxford-Nanopore) and single-cell chromatin accessibility (scATAC-Seq) techniques to reveal how genome architecture is altered by genomic rearrangements aberrations in primary tumor samples.
-Related projects and responsibilities will include:
-    <ol>
-<li>Studies of patient samples for tumor behavior and clinical outcomes. 
-<li>Studies of resistance to existing and emerging cancer therapies using patient-derived data. 
-	</ol>
-	
-As a postdoctoral fellow, you will have the opportunity to 
-
-	 <ol>
-<li> Apply or develop novel bioinformatics algorithms to interpret cancer genomic and epigenomic datasets.
-<li> Grow your own research program and plan for the next stages of your career. 
-	</ol>
-	
-    
-    Potential postdoctoral fellows are very much encouraged to  <a
-    href="#" class="minlink" onclick="contactShow();">get in
-    touch</a>. Generally the most useful emails will touch on your
-    background and previous work, how our research interests may
-    intersect, your timeframe for seeking a position and will include
-    a copy of your CV. Informal inquiries very welcome. <br>
-
-    <hr>
-
-    <h3> PhD students </h3>
-    We are part of <a href =
-    "https://gsbs.uth.edu/"
-    class = "minlink"> the Graduate School of Biomedical Sciences (GBSB) </a> program of the University of Texas Health Science Center at Houston. Students should apply to the graduate program and do not apply directly to labs. During the first year of a Ph.D. program, students rotate through ~3 labs prior to deciding on a thesis lab. Our lab is usually open for rotation students every quarter. <br><br> Prospective and current graduate students are
-    very welcome to <a
-    href="#" class="minlink" onclick="contactShow();">get in touch</a> with
-    questions about the lab, although this is not required to gain
-    admittance to the program.  <br>
-
- <br>
-        <hr>
-
-    <h3> Undergraduate and high school students </h3>
-    Please contact with Kadir regarding research positions open for undergraduate
-    or high school students. <br><br>We accept students through <a href="https://www.mdanderson.org/education-training/degrees-programs/summer-research-programs/cprit-cure.html" class="minlink" target="_blank">CPRIT-CURE Summer Undergraduate Program </a> and the PCCSM program which is for STEM-oriented high school (junior and senior) and college students interested in biomedical careers, and first-year medical students. Our focus is on students/trainees who are under-represented in science and medicine.<br><br>
-
-   <hr>
-  	 <h3> Philosophy on Mentorship and Expectations </h3>
-
-
-
-    
-
-
-
-    
-</DIV>
-
-
-
-  <DIV id="contact">
-
-<h2>Contact</h2>
-      <hr>
-
-      E-mail: kcakedemir@mdanderson.org<br><br>
-      Twitter: <a href="https://twitter.com/kcakdemir" class="minlink" target="_blank">@kcakdemir</a><br><br>
-      Github: <a href="https://akdemirlab.github.io/" class="minlink" target="_blank">Akdemirlab</a><br><br>
-      
-      We're located in the Basic Science Research Building 5th Floor, UT MD Anderson Brain Tumor Center</a>. <br><br>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d866.3432006794505!2d-95.39873743155493!3d29.70895859293418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c114aff55ce5%3A0xa5820c6b99efe14f!2sMitchell%20Research%20Building!5e0!3m2!1sen!2sus!4v1622661090509!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;"
-      allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
- 
-
-
-
-</DIV>
-
-
-<DIV id="publications">
-<h2>Selected Publications</h2>
-    <hr>
-    
-You can find a current and complete list of publications on <a href =
-  "https://scholar.google.com/citations?user=W2WBgzEAAAAJ&hl=en" class =
-    "minlink" target="_blank">Google scholar</a>.
-
-    <hr>
-    
-   
-    <img src = "img/watercolor.jpg" style="float:left;margin:0 15px 0 0;width:400px;">
-<br><em>Oncogenic drivers shape the tumor microenvironment in human gliomas</em> (Submitted)  <br> 
-[<a href =
-  "https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.abstract" class =
-  "minlink" target="_blank">bioRxiv</a>]
-<br clear="all">
-B Zhao (co-first), CY Cho (co-first), L Ye (co-first), T Keal (co-first), T Mitchell (co-first), I Martin-Barrio (co-first), C Abi Faraj, M Unal, J Alsing, NM Lawson, ER Kim, F Chavez, KM Rangel, SK Singh, JH McCarthy, DM Ashley, WKA Yung, V Puduvalli, G Nir, JS Weinberg, L Wang, KL Ligon, G Genovese, P Van Loo, PA Futreal, JT Huse (co-corresponding), JR Dixon (co-corresponding), FF Lang (co-corresponding), KC Akdemir (co-corresponding)
-<br><br>
-
-    <hr>
-	
-    <hr>
-    
-   
-    <img src = "img/esop.jpg" style="float:left;margin:0 15px 0 0;">
-<br><em>Recurrent ERBB2 alterations are associated with esophageal adenocarcinoma brain metastases</em> (Submitted)  <br> 
-[<a href =
-  "https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1" class =
-  "minlink" target="_blank">medRxiv</a>]
-<br clear="all">
-<br> N Lawson (co-first), Ye L (co-first), Cho C (co-first), Zhao B (co-first), T Michell, I Martin-Barrio, B Beernaert, M Banu, Y Lissanu, S Shaffer, H Tawbi, J Li, MK Gule-Monroe, JT Huse, MB Murphy, F Yin, FF Lang, EE Parkers, JS. Weinberg (co-corresponding), KC. Akdemir (co-corresponding)
-<br><br>
-
-    <hr>
-
-	
-    <hr>
-    
-   
-    <img src = "img/signatures.jpeg" style="float:left;margin:0 15px 0 0;">
-<br><em>Somatic mutation distributions in cancer genomes vary with three-dimensional chromatin structure</em> (2020)  <br> [<a href =
-  "https://www.nature.com/articles/s41588-020-0708-0" class =
-  "minlink" target="_blank">Nature Genetics</a>] <br><br><br><br><br><br><br> KC. Akdemir (co-corresponding), VT. Le, JM. Kim, S. Killcoyne, DA. King, Y. Lin, Y. Tian, A. Inoue, SB. Amin, FS. Robinson, M. Nimmakayalu, RE. Herrera, EJ. Lynn, K. Chan, S. Seth, LJ. Klimczak, M. Gerstung, DA. Gordenin, J. OBrien, L. Li, YL. Deribe, RG. Verhaak, PJ. Campbell, R. Fitzgerald, AJ. Morrison, JR. Dixon (co-corresponding), PA. Futreal (co-corresponding)
-<br><br>
-
-    <hr>
-
-
-    
- <hr>
-    <img src = "img/SVsInHiC.jpeg" style="float:left;margin:0 15px 0 0;">
-<br><em>Disruption of chromatin folding domains by somatic genomic rearrangements in human cancer</em> (2020)  <br> [<a href =
-  "https://www.nature.com/articles/s41588-019-0564-y" class =
-  "minlink" target="_blank">Nature Genetics</a>] <br><br> KC. Akdemir, VT. Le, S. Chandran, Y. Li, RG. Verhaak, R Beroukhim, PJ. Campbell, L. Chin, JR. Dixon, PA. Futreal, PCAWG Structural Variation Working Group & PCAWG Consortium
-<br><br><br><br><br><br><br><br><br><br><br><br>
-	<hr>
-    <hr>
-    
-    
- 
-     
-    <img src = "img/pcawg.jpeg" style="float:left;margin:0 15px 0 0;">
-<br><em>Pan-cancer analysis of whole genomes</em> (2020)  <br> [<a href =
-  "https://www.nature.com/articles/s41586-020-1969-6" class =
-  "minlink" target="_blank">Nature</a>] <br><br> The ICGC/TCGA Pan-Cancer Analysis of Whole Genomes Consortium
-<br><br><br><br>
-
-    <hr>
-
-
-  </DIV>
-
-  <DIV id="news">
-
-<h2> News </h2>
-<hr>
-	Our NCI-Brain SPORE Development Award application is funded!!
-	<br><br>
-	Kadir presents some of our his new work on chordoma genomics at the annual CTOS meeting.   
-	<br><br>
-	Our lab received a UT Rising Stars Award!!!
-	<br> <br>
-	We are hiring multiple postdoctoral fellows. More information <a href="https://jobrxiv.org/job/md-anderson-cancer-center-27778-postdoctoral-fellow-cancer-chromatin-organization/" class="minlink" target="_blank">here </a>.  
-	<br> [<a href="AkdemirLab-Positions-Flyer.pdf" class="minlink" onClick="ga('send', 'pageview', 'cv.pdf');">Open Positions</a>]<br>
-
-    </DIV>
-
-
-
-
-<DIV id="members">
-  
-<h2>Members</h2>
-
-<hr>
-
-<div class="profiles-grid">
-  <div class="profile-container">
-    <img src="img/kadir.jpg" alt="Kadir C. Akdemir">
-    <div class="intro">
-      <h3>Kadir C. Akdemir</h3>
-      Principal investigator
-      [<a href="AkdemirCV.pdf" class="minlink" onClick="ga('send', 'pageview', 'cv.pdf');">CV</a>]<br>
-      <br>
-      <b>Hometown</b>: Siirt, Turkey
-      <br>
-      <b>email</b>: kcakedemir@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/allison.jpg" alt="Allison Anderson">
-    <div class="intro">
-      <h3>Allison Anderson</h3>
-      Research Data Coordinator<br>
-      <br>
-      <b>Hobbies</b>: playing with my 3 dogs, scrapbooking, and spending time with friends and family!
-      <br>
-      <b>email</b>: AIAnderson@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/tate.png" alt="Tate Bregman">
-    <div class="intro">
-      <h3>Tate Bregman</h3>
-      Undergraduate Student<br>
-      <br>
-      <b>email</b>: TBregman@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/kate.jpeg" alt="Kate Cho">
-    <div class="intro">
-      <h3>Kate Cho</h3>
-      PhD Student
-      <br><br>
-      <b>Hometown</b>: Suwon, South Korea
-      <br>
-      <b>Hobbies</b>: playing with my dog, gym and trying new food places
-      <br>
-      <b>email</b>: CCho@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/ece.jpg" alt="Ece Kilinc">
-    <div class="intro">
-      <h3>Ece Kilinc</h3>
-      PhD Student co-advised with Dr. Jian Hu
-      <br><br>
-      <b>Hometown</b>: Zonguldak, Turkey
-      <br>
-      <b>Hobbies</b>: ancient languages, reading, astronomy
-      <br>
-      <b>email</b>: EKilinc@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/nora.jpg" alt="Nora Lawson">
-    <div class="intro">
-      <h3>Nora Lawson</h3>
-      Master's Student
-      <br><br>
-      <b>Hometown</b>: Lampasas, Texas
-      <br>
-      <b>Hobbies</b>: Swimming and hiking.
-      <br>
-      <b>email</b>: NMLawson@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/ines.jpeg" alt="Inés Martín Barrio">
-    <div class="intro">
-      <h3>Inés Martín Barrio</h3>
-      Master's Student
-      <br><br>
-      <b>Hometown</b>: Madrid, Spain
-      <br>
-      <b>email</b>: imartin@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/thomas.jpg" alt="Thomas Mitchell">
-    <div class="intro">
-      <h3>Thomas Mitchell</h3>
-      PhD Student co-advised with Dr. Peter Van Loo
-      <br><br>
-      <b>Hometown</b>: Guerneville, California
-      <br>
-      <b>Hobbies</b>: reading, video games, and playing pickle ball
-      <br>
-      <b>email</b>: tjmitchell1@mdanderson.org
-    </div>
-  </div>
-
-
-  <div class="profile-container">
-    <img src="img/mesut.jpeg" alt="Mesut Unal">
-    <div class="intro">
-      <h3>Mesut Unal</h3>
-      Computational Post-doc
-      <br><br>
-      <b>Hometown</b>: Antalya, Turkey
-      <br>
-      <b>Hobbies</b>: Painting, history, philosophy, martial arts, new to bouldering
-      <br>
-      <b>email</b>: munal@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/lingqun.jpg" alt="Lingqun Ye">
-    <div class="intro">
-      <h3>Lingqun Ye</h3>
-      Computational Staff Scientist
-      <br><br>
-      <b>Hometown</b>: Hunan, China
-      <br>
-      <b>Hobbies</b>: camping, gaming, piano, swimming
-      <br>
-      <b>email</b>: lye1@mdanderson.org
-    </div>
-  </div>
-
-  <div class="profile-container">
-    <img src="img/bo.jpg" alt="Bo Zhao">
-    <div class="intro">
-      <h3>Bo Zhao</h3>
-      Computational Post-doc
-      <br><br>
-      <b>Hometown</b>: Henan, China
-      <br>
-      <b>Hobbies</b>: riding, hiking
-      <br>
-      <b>email</b>: bzhao2@mdanderson.org
-    </div>
-  </div>
-</div>
-
-
-<h2>Alumni</h2>
-
-<hr>
-
-<div class="profiles-grid">
-<div class="profile-container">
-  <img src="img/lana.jpg" alt="Lana Al Hasani">
-  <div class="intro">
-    <h3>Lana Al Hasani</h3>
-    PhD Rotation Student
-    <br><br>
-    <b>Hometown</b>: Baghdad, Iraq
-    <br>
-    <b>Hobbies</b>: weightlifting, pilates and content creation for social media
-    <br>
-    <b>email</b>: LAAl@mdanderson.org
-  </div>
-</div>
-
-<div class="profile-container">
-  <img src="img/andrea.jpg" alt="Andrea Conley">
-  <div class="intro">
-    <h3>Andrea Conley</h3>
-    Summer Student
-    <br><br>
-    <b>Hometown</b>: Houston, Texas
-    <br>
-    <b>Hobbies</b>: sketching, cycling, gaming, spending time with family, friends, and pets
-    <br>
-    <b>email</b>: aconley11@mdanderson.org
-  </div>
-</div>
-
-<div class="profile-container">
-  <img src="img/aminah.jpg" alt="Aminah El-Titi">
-  <div class="intro">
-    <h3>Aminah El-Titi</h3>
-    High-school Student
-    <br><br>
-    <b>Hometown</b>: Houston, Texas
-    <br>
-    <b>Hobbies</b>: crocheting, reading, and I enjoy spending time with my close friends.
-    <br>
-    <b>email</b>: aael@mdanderson.org
-  </div>
-</div>
-
-<div class="profile-container">
-  <img src="img/ali.jpg" alt="Ali Haider">
-  <div class="intro">
-    <h3>Ali Haider</h3>
-    Medical student (co-advised with Dr. Lang)
-    <br><br>
-    <b>Hometown</b>: Fort Worth, Texas
-    <br>
-    <b>Hobbies</b>: weightlifting, sports, reading, and spicy food.
-    <br>
-    <b>email</b>: aalam@mdanderson.org
-  </div>
-</div>
-
-<div class="profile-container">
-  <img src="img/ellie.JPG" alt="Ellie Kim">
-  <div class="intro">
-    <h3>Ellie Kim</h3>
-    Summer Student (UT Austin)
-    <br><br>
-    <b>Hometown</b>: Seoul, South Korea
-    <br>
-    <b>Hobbies</b>: I enjoy spending time in coffee shops, reading, exploring new places, and taking long walks.
-    <br>
-    <b>email</b>: rkim1@mdanderson.org
-  </div>
-</div>
-
-
-<div class="profile-container">
-  <img src="img/kristy.jpg" alt="Kristy Mendoza">
-  <div class="intro">
-    <h3>Kristy Mendoza</h3>
-    Summer Student (Columbia University)
-    <br><br>
-    <b>Hometown</b>: Houston, Texas
-    <br>
-    <b>Hobbies</b>: dancing, playing sudoku, and trivia.
-    <br>
-    <b>email</b>: kmendoza3@mdanderson.org
-  </div>
-</div>
-</div>
-
-<br><br><br><br>    	
-    <hr>
-    
-  </DIV>
-
-
-
-  
-</DIV>
-
-
-</BODY>
-
+  let active = null, start = null;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function draw(now) {
+    if (start === null) start = now;
+    const p = reduce ? 10 : (now - start) / 1400;
+    ctx.clearRect(0,0,W,H);
+    for (const s of spots) {
+      const e = Math.max(0, Math.min(1, (p - s.t*0.75) * 3));
+      if (e <= 0) continue;
+      ctx.globalAlpha = (active === null || active === s.k) ? e : e*0.14;
+      ctx.fillStyle = NICHES[s.k].color;
+      ctx.beginPath(); ctx.arc(s.x, s.y, rr * (0.6 + 0.4*e), 0, Math.PI*2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (p < 1.3) requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  const lg = document.getElementById("legend");
+  lg.innerHTML = NICHES.map((n,i) => `<li><button type="button" aria-pressed="false" data-k="${i}"><i style="background:${n.color}"></i>${n.name}</button></li>`).join("");
+  lg.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    const k = +b.dataset.k; active = active === k ? null : k;
+    lg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", +x.dataset.k === active));
+    start = -1e6; requestAnimationFrame(draw);
+  });
+})();
+
+/* ---------- Research figure viewer ---------- */
+(() => {
+  const dlg = document.getElementById("viewer"), vi = document.getElementById("viewer-img"), vc = document.getElementById("viewer-cap");
+  document.querySelectorAll(".fig-open").forEach(b => b.addEventListener("click", () => {
+    const im = b.querySelector("img"); vi.src = im.src; vi.alt = im.alt; vc.textContent = im.alt; dlg.showModal();
+  }));
+  document.getElementById("viewer-close").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+</body>
 </html>
-
-
-
-
-
-
-
