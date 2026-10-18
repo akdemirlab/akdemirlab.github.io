@@ -255,10 +255,11 @@ footer a{color:var(--ink-2)}
 <button aria-controls="nav" aria-expanded="false" class="menu-btn">Menu</button>
 <nav aria-label="Main" class="main" id="nav">
 <ul>
-<li><a href="#research">Research</a></li><li><a href="#software">Software &amp; data</a></li>
-<li><a href="#publications">Publications</a></li>
-<li><a href="#news">News</a></li>
+<li><a href="#research">Research</a></li>
 <li><a href="#people">People</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#software">Software &amp; data</a></li>
+<li><a href="#news">News</a></li>
 <li><a href="#join">Join us</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -314,16 +315,6 @@ footer a{color:var(--ink-2)}
 <article class="theme"><figure><button type="button" class="fig-open" aria-label="View full figure: Hematoxylin and eosin stained brain tumor tissue"><img alt="Hematoxylin and eosin stained brain tumor tissue" loading="lazy" src="img/research/giantcell.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>Treatment-driven evolution and recurrence</h3><p class="q">How do treatment and acquired mutations reshape recurrent gliomas?</p><p>We study longitudinal tumor genomes, temozolomide-associated hypermutation, mismatch-repair alterations, and changes in malignant cell states after therapy. Our goal is to connect the evolutionary history of recurrent tumors with their changing spatial ecosystems and identify vulnerabilities that emerge during progression.</p><ul class="tags"><li>Longitudinal genomics</li><li>TMZ hypermutation</li><li>DNA repair</li><li>Glioma recurrence</li></ul></div></article>
 <article class="theme e"><figure><button type="button" class="fig-open" aria-label="View full figure: Schematic of layered chordoma data: chromatin accessibility tracks, chromosome structure and a spatial map of tumor cells"><img alt="Schematic of layered chordoma data: chromatin accessibility tracks, chromosome structure and a spatial map of tumor cells" loading="lazy" src="img/research/chordoma.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>Chordoma evolution and treatment resistance</h3><p class="q">What keeps TBXT switched on in chordoma, and which tumors will come back after treatment?</p><p>Chordoma is a rare tumor of the skull base and spine driven by the developmental transcription factor TBXT (brachyury). We are building a multi-omic atlas of chordomas from the skull base, mobile spine and sacrum, including tumors sampled at several points during treatment.</p><p>By integrating single-cell, genomic and spatial profiling, we study how chordomas are regulated, how they evolve, and how they respond to therapy.</p><ul class="tags"><li>TBXT (brachyury)</li><li>scATAC-seq</li><li>Long-read WGS</li><li>Spatial transcriptomics</li><li>Radiation therapy</li></ul></div></article>
 <article class="theme">
-<figure><button type="button" class="fig-open" aria-label="View full figure: Figure showing somatic mutation density across chromatin domains"><img alt="Figure showing somatic mutation density across chromatin domains" loading="lazy" src="img/research/signatures.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
-<div>
-<h3>Chromatin architecture and mutation</h3>
-<p class="q">How does the folded genome decide where mutations land?</p>
-<p>Two meters of DNA fold into a nucleus a few micrometers wide, organized into self-interacting domains (TADs) that control gene regulation and DNA replication. We showed that somatic mutation rates track this 3D structure across cancers. We now use Hi-C and single-cell chromatin accessibility in brain tumors to connect genome folding with DNA damage, repair and tumor evolution.</p>
-<p class="key">Key work: <a href="https://www.nature.com/articles/s41588-020-0708-0">Nature Genetics 2020</a></p>
-<ul class="tags"><li>Hi-C</li><li>scATAC-seq</li><li>Mutational processes</li><li>Epigenome</li></ul>
-</div>
-</article>
-<article class="theme e">
 <figure><button type="button" class="fig-open" aria-label="View full figure: Hi-C contact map showing a disrupted chromatin domain at a rearrangement"><img alt="Hi-C contact map showing a disrupted chromatin domain at a rearrangement" loading="lazy" src="img/research/svsinhic.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
 <div>
 <h3>Complex rearrangements and tumor evolution</h3>
@@ -335,26 +326,27 @@ footer a{color:var(--ink-2)}
 </article>
 </div>
 </section>
-<section class="block alt" id="tumors">
+<section class="block alt" id="people">
 <div class="wrap">
-<div class="head">
-<h2>Tumors we study</h2>
-<p>Our questions begin with patient tumors and are shaped by collaborations across neurosurgery, neuropathology, oncology, genomics, and computational biology.</p>
+<div class="head"><h2>People</h2><p>Computational biologists, data scientists and trainees from five countries, working closely with clinical and wet-lab collaborators.</p></div>
+<div class="pi">
+<img alt="Kadir C. Akdemir" loading="lazy" src="img/people/kadir.jpg"/>
+<div>
+<h3>Kadir C. Akdemir, PhD</h3>
+<p class="role">Principal investigator</p>
+<p><span class="lbl">From</span> Siirt, Turkey</p>
+<p><span class="lbl">Hobbies</span> spending time with this little guy and convincing him building Lego</p>
+<div class="links"><a href="mailto:kcakedemir@mdanderson.org">kcakedemir@mdanderson.org</a><a href="AkdemirCV.pdf">CV (PDF)</a><a href="https://scholar.google.com/citations?user=W2WBgzEAAAAJ&amp;hl=en">Google Scholar</a><a href="https://twitter.com/kcakdemir">@kcakdemir</a></div>
 </div>
-<div class="tumors">
-<div class="tumor"><h3>Glioblastoma and gliomas</h3><p>The most common malignant brain tumors in adults, and the focus of our spatial and single-cell work.</p></div>
-<div class="tumor"><h3>Chordoma</h3><p>A rare tumor of the skull base and spine with few treatment options and little genomic data.</p></div>
-<div class="tumor"><h3>Brain metastases</h3><p>We investigate how metastatic cancers, including esophageal adenocarcinoma and HER2-positive breast cancer, evolve and adapt within the brain.</p></div>
-<div class="tumor"><h3>Other CNS tumors</h3><p>Rare and pediatric tumors where integrative multi-omics can sharpen diagnosis.</p></div>
 </div>
-<div aria-label="Methods" class="methods">
-<p>Methods we work with</p>
-<span>Spatial transcriptomics</span><span>scRNA-seq</span><span>scATAC-seq</span><span>Hi-C</span><span>Nanopore long-read WGS</span><span>Whole-genome sequencing</span><span>Algorithm development</span>
-<span>DNA FISH</span><span>ecDNA analysis</span></div>
+<div class="people" id="members"></div>
+<div class="alumni">
+<h3>Alumni</h3>
+<ul id="alumni"></ul>
+</div>
 </div>
 </section>
-<section class="block" id="software"><div class="wrap"><div class="head"><h2>Software &amp; data</h2><p>We develop computational approaches to interpret complex cancer genomes and spatially resolved tumors. Explore our publicly available tools and research outputs.</p></div><div class="resource-grid"><article class="resource"><h3>Lab code and pipelines</h3><p>Methods and open-source repositories from the group, including tools for cancer genome analysis.</p><a href="https://github.com/akdemirlab">Explore GitHub repositories →</a></article><article class="resource"><h3>Long-read genome analysis</h3><p>Workflows for interpreting structural variants, copy-number changes, and complex amplification from nanopore sequencing. Links to individual tools will be added as they are released.</p><span class="resource-note">Research in progress</span></article><article class="resource"><h3>Spatial genomics resources</h3><p>Associated preprints and publications describe the spatial and genomic datasets generated by the lab. Public data portals will be linked when releases are available.</p><a href="#publications">Explore selected publications →</a></article></div></div></section>
-<section class="block alt" id="publications">
+<section class="block" id="publications">
 <div class="wrap">
 <div class="head">
 <h2>Selected publications</h2>
@@ -397,30 +389,29 @@ footer a{color:var(--ink-2)}
 <p class="more">* co-first authors, † co-corresponding authors</p>
 </div>
 </section>
-<section class="block" id="news">
+<section class="block alt" id="tumors">
+<div class="wrap">
+<div class="head">
+<h2>Tumors we study</h2>
+<p>Our questions begin with patient tumors and are shaped by collaborations across neurosurgery, neuropathology, oncology, genomics, and computational biology.</p>
+</div>
+<div class="tumors">
+<div class="tumor"><h3>Glioblastoma and gliomas</h3><p>The most common malignant brain tumors in adults, and the focus of our spatial and single-cell work.</p></div>
+<div class="tumor"><h3>Chordoma</h3><p>A rare tumor of the skull base and spine with few treatment options and little genomic data.</p></div>
+<div class="tumor"><h3>Brain metastases</h3><p>We investigate how metastatic cancers, including esophageal adenocarcinoma and HER2-positive breast cancer, evolve and adapt within the brain.</p></div>
+<div class="tumor"><h3>Other CNS tumors</h3><p>Rare and pediatric tumors where integrative multi-omics can sharpen diagnosis.</p></div>
+</div>
+<div aria-label="Methods" class="methods">
+<p>Methods we work with</p>
+<span>Spatial transcriptomics</span><span>scRNA-seq</span><span>scATAC-seq</span><span>Hi-C</span><span>Nanopore long-read WGS</span><span>Whole-genome sequencing</span><span>Algorithm development</span>
+<span>DNA FISH</span><span>ecDNA analysis</span></div>
+</div>
+</section>
+<section class="block" id="software"><div class="wrap"><div class="head"><h2>Software &amp; data</h2><p>We develop computational approaches to interpret complex cancer genomes and spatially resolved tumors. Explore our publicly available tools and research outputs.</p></div><div class="resource-grid"><article class="resource"><h3>Lab code and pipelines</h3><p>Methods and open-source repositories from the group, including tools for cancer genome analysis.</p><a href="https://github.com/akdemirlab">Explore GitHub repositories →</a></article><article class="resource"><h3>Long-read genome analysis</h3><p>Workflows for interpreting structural variants, copy-number changes, and complex amplification from nanopore sequencing. Links to individual tools will be added as they are released.</p><span class="resource-note">Research in progress</span></article><article class="resource"><h3>Spatial genomics resources</h3><p>Associated preprints and publications describe the spatial and genomic datasets generated by the lab. Public data portals will be linked when releases are available.</p><a href="#publications">Explore selected publications →</a></article></div></div></section>
+<section class="block alt" id="news">
 <div class="wrap">
 <div class="head"><h2>News</h2><p>Recent milestones from the lab.</p></div>
 <div class="news"><article><time datetime="2026-09">September 2026</time><h3>NIH R35 MIRA award</h3><p>The lab received an NIH R35 MIRA award supporting our research program in cancer genome biology.</p></article><article><time datetime="2026-09">September 2026</time><h3>ERBB2 brain metastasis study</h3><p>Our study of ERBB2 amplification architecture in esophageal adenocarcinoma brain metastases was accepted in principle at <em>Cancer Cell</em>; publication details will follow.</p></article><article><time datetime="2025">2025</time><h3>Spatial glioma study</h3><p>We shared our work connecting oncogenic drivers to the tumor microenvironment in human gliomas. <a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.abstract">Read the preprint</a>.</p></article><article><h3>Interested in joining?</h3><p>Learn about postdoctoral and student opportunities and reach out about current availability. <a href="#join">Explore opportunities</a>.</p></article></div>
-</div>
-</section>
-<section class="block alt" id="people">
-<div class="wrap">
-<div class="head"><h2>People</h2><p>Computational biologists, data scientists and trainees from five countries, working closely with clinical and wet-lab collaborators.</p></div>
-<div class="pi">
-<img alt="Kadir C. Akdemir" loading="lazy" src="img/people/kadir.jpg"/>
-<div>
-<h3>Kadir C. Akdemir, PhD</h3>
-<p class="role">Principal investigator</p>
-<p><span class="lbl">From</span> Siirt, Turkey</p>
-<p><span class="lbl">Hobbies</span> spending time with this little guy and convincing him building Lego</p>
-<div class="links"><a href="mailto:kcakedemir@mdanderson.org">kcakedemir@mdanderson.org</a><a href="AkdemirCV.pdf">CV (PDF)</a><a href="https://scholar.google.com/citations?user=W2WBgzEAAAAJ&amp;hl=en">Google Scholar</a><a href="https://twitter.com/kcakdemir">@kcakdemir</a></div>
-</div>
-</div>
-<div class="people" id="members"></div>
-<div class="alumni">
-<h3>Alumni</h3>
-<ul id="alumni"></ul>
-</div>
 </div>
 </section>
 <section class="block" id="join">
