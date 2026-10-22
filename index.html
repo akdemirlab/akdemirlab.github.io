@@ -255,6 +255,14 @@ footer a{color:var(--ink-2)}
 @media (max-width:820px){.funders{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:820px){.grants{grid-template-columns:1fr}}
 @media (max-width:520px){.funders{grid-template-columns:repeat(2,minmax(0,1fr))}.funders img{height:70px}}
+/* motto */
+.motto{background:var(--ink);color:#fff;padding:clamp(64px,9vw,128px) 0}
+.motto .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px clamp(28px,5vw,72px);align-items:end}
+.motto h2{font:600 clamp(44px,6.4vw,88px)/.98 var(--sans);letter-spacing:-.04em;margin:0 0 14px;color:#fff}
+.motto .who{font:italic 400 18px/1.4 var(--serif);color:#B9B4D6;margin:0}
+.motto p{font:400 21px/1.6 var(--serif);color:#E4E1F2;margin:0 0 16px;max-width:32em}
+.motto p:last-child{margin-bottom:0}
+@media (max-width:820px){.motto .wrap{grid-template-columns:1fr}}
 </style>
 <link href="https://akdemirlab.github.io/" rel="canonical"/><link rel="icon" type="image/png" sizes="32x32" href="img/logo-32.png"/><link rel="apple-touch-icon" href="img/logo-180.png"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"ResearchOrganization","name":"Akdemir Lab","url":"https://akdemirlab.github.io/","parentOrganization":{"@type":"Organization","name":"The University of Texas MD Anderson Cancer Center"},"researchArea":["Spatial cancer genomics","Cancer genome evolution","Extrachromosomal DNA","Brain tumors","Chromatin organization"]}</script></head>
 <body>
@@ -314,7 +322,7 @@ footer a{color:var(--ink-2)}
 <h2>Research</h2>
 <p>Cancer genome evolution and spatial tissue organization are intertwined. We combine patient samples, advanced sequencing, imaging, and computational methods to understand how genomic alterations change tumor biology.</p>
 </div>
-<article class="theme"><figure><button type="button" class="fig-open" aria-label="View full figure: Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases"><img alt="Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases" loading="lazy" src="img/research/esop.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>ecDNA, oncogene amplification and cancer evolution</h3><p class="q">How does the ecture of oncogene amplification influence tumor evolution and response to therapy?</p><p>We study extrachromosomal DNA (ecDNA), homogeneously staining regions, and other amplification structures in gliomas and brain metastases. By integrating DNA FISH, whole-genome sequencing, and spatial transcriptomics, we investigate how amplification ecture relates to tumor cell states, immune organization, and clinical outcomes.</p><p class="key">Key work: <a href="https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1">ERBB2 amplification in esophageal adenocarcinoma brain metastases</a></p><ul class="tags"><li>ecDNA</li><li>ERBB2 and EGFR</li><li>DNA FISH</li><li>Brain metastases</li><li>Therapy response</li></ul></div></article>
+<article class="theme"><figure><button type="button" class="fig-open" aria-label="View full figure: Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases"><img alt="Research image illustrating genomic changes in esophageal adenocarcinoma brain metastases" loading="lazy" src="img/research/esop.jpg"/></button><figcaption>Click to enlarge</figcaption></figure><div><h3>ecDNA, oncogene amplification and cancer evolution</h3><p class="q">How does the architecture of oncogene amplification influence tumor evolution and response to therapy?</p><p>We study extrachromosomal DNA (ecDNA), homogeneously staining regions, and other amplification structures in gliomas and brain metastases. By integrating DNA FISH, whole-genome sequencing, and spatial transcriptomics, we investigate how amplification architecture relates to tumor cell states, immune organization, and clinical outcomes.</p><p class="key">Key work: <a href="https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1">ERBB2 amplification in esophageal adenocarcinoma brain metastases</a></p><ul class="tags"><li>ecDNA</li><li>ERBB2 and EGFR</li><li>DNA FISH</li><li>Brain metastases</li><li>Therapy response</li></ul></div></article>
 <article class="theme e">
 <figure><button type="button" class="fig-open" aria-label="View full figure: Watercolor-style illustration of glioma tissue and its microenvironment"><img alt="Watercolor-style illustration of glioma tissue and its microenvironment" loading="lazy" src="img/research/watercolor.jpg"/></button><figcaption>Click to enlarge</figcaption></figure>
 <div>
@@ -378,7 +386,7 @@ footer a{color:var(--ink-2)}
 <img alt="" loading="lazy" src="img/research/esop.jpg"/>
 <div>
 <h3><a href="https://www.medrxiv.org/content/10.1101/2025.02.19.25322558v1">Recurrent ERBB2 alterations are associated with esophageal adenocarcinoma brain metastases</a></h3>
-<p class="venue">Cancer Cell <span class="st">· accepted in principle; final publication details pending</span></p><p class="pub-summary">Identifying prevalent ERBB2 amplification in esophageal adenocarcinoma brain metastases and associations between amplification ecture and clinical outcomes.</p>
+<p class="venue">Cancer Cell <span class="st">· accepted in principle; final publication details pending</span></p><p class="pub-summary">Identifying prevalent ERBB2 amplification in esophageal adenocarcinoma brain metastases and associations between amplification architecture and clinical outcomes.</p>
 <details><summary>Authors</summary><p>N Lawson*, L Ye*, C Cho*, B Zhao*, T Mitchell, I Martin-Barrio, B Beernaert, M Banu, Y Lissanu, S Shaffer, H Tawbi, J Li, MK Gule-Monroe, JT Huse, MB Murphy, F Yin, FF Lang, EE Parker, JS Weinberg†, <b>KC Akdemir</b>†</p></details>
 </div>
 </li>
@@ -489,6 +497,18 @@ footer a{color:var(--ink-2)}
 </ul>
 </div>
 </section>
+<section class="motto" id="motto" aria-labelledby="motto-title">
+<div class="wrap">
+<div>
+<h2 id="motto-title">Job's not finished.</h2>
+<p class="who">As Kobe Bryant put it.</p>
+</div>
+<div>
+<p>We take pride in every achievement along the way. Each fellowship, grant, and publication marks meaningful progress and reflects the collective dedication and hard work of our team.</p>
+<p>But as long as cancer continues to inflict pain on patients and their families, we won't rest. Our job is to tackle the cancer problem, and that job isn't finished.</p>
+</div>
+</div>
+</section>
 <section class="block" id="contact">
 <div class="wrap">
 <div class="head"><h2>Contact</h2><p>Prospective lab members, collaborators and patients' advocates are welcome to reach out.</p></div>
@@ -525,7 +545,7 @@ const MEMBERS = [
 ];
 const ALUMNI = [
   {name:"Tate Bregman", role:"Undergraduate student, Rice University"},
-  {name:"Ece Kilinc", role:"GBSS PhD rotation student"},
+  {name:"Ece Kilinc", role:"GSBS PhD rotation student"},
   {name:"Lana Al Hasani", role:"GSBS PhD rotation student"},
   {name:"Ali Haider", role:"Medical student, co-advised with Dr. Lang"},
   {name:"Aminah El-Titi", role:"High school student"},
