@@ -231,6 +231,14 @@ footer a{color:var(--ink-2)}
 .resource h3{font:600 21px/1.25 var(--sans);margin:0 0 12px}
 .resource p{color:var(--ink-2);font-size:15.5px;margin:0 0 16px}
 .resource a{font-weight:600;font-size:14.5px}
+.tools{list-style:none;margin:0 0 16px;padding:0}
+.tools li{border-top:1px solid var(--rule);padding:12px 0}
+.tools li:last-child{border-bottom:1px solid var(--rule)}
+.resource .tool{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);font-weight:400}
+.tool img{width:64px;height:64px;border-radius:50%;flex:none}
+.tool b{display:block;font-size:16px;font-weight:600;color:var(--hema)}
+.tool small{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-2);margin-top:2px}
+.tool:hover b{color:var(--eosin);text-decoration:underline}
 .resource-note{display:block;font-size:13px;line-height:1.5;color:var(--ink-3)}
 .datasets{list-style:none;margin:0 0 12px;padding:0}
 .datasets:empty{display:none}
@@ -433,7 +441,11 @@ footer a{color:var(--ink-2)}
 <span>DNA FISH</span><span>ecDNA analysis</span></div>
 </div>
 </section>
-<section class="block" id="software"><div class="wrap"><div class="head"><h2>Software &amp; data</h2><p>We develop computational approaches to interpret complex cancer genomes and spatially resolved tumors. Explore our publicly available tools and research outputs.</p></div><div class="resource-grid"><article class="resource"><h3>Lab code and pipelines</h3><p>Methods and open-source repositories from the group, including tools for cancer genome analysis.</p><a href="https://github.com/akdemirlab">Explore GitHub repositories →</a></article><article class="resource"><h3>Genomic datasets</h3><p>Publicly shared genomic datasets from our studies, including whole-genome and long-read sequencing data.</p>
+<section class="block" id="software"><div class="wrap"><div class="head"><h2>Software &amp; data</h2><p>We develop computational approaches to interpret complex cancer genomes and spatially resolved tumors. Explore our publicly available tools and research outputs.</p></div><div class="resource-grid"><article class="resource"><h3>Lab code and pipelines</h3><p>Methods and open-source repositories from the group, including tools for cancer genome analysis.</p>
+<ul class="tools">
+<li><a class="tool" href="https://github.com/akdemirlab/AMPLIFISH" target="_blank" rel="noopener noreferrer"><img src="img/algorithms/AMPLIFISH.png" alt="" width="64" height="64" loading="lazy"><span><b>AMPLIFISH</b><small>Unsupervised FISH image analysis that separates ecDNA from HSR amplification</small></span></a></li>
+</ul>
+<a href="https://github.com/akdemirlab">Explore GitHub repositories →</a></article><article class="resource"><h3>Genomic datasets</h3><p>Publicly shared genomic datasets from our studies, including whole-genome and long-read sequencing data.</p>
 <ul class="datasets">
 <!-- Add one line per dataset, e.g.:
 <li><a href="https://...">Dataset name</a><span>Study or repository</span></li> -->
